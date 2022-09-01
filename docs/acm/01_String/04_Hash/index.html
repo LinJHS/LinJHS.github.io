@@ -13,7 +13,7 @@
     
     
       
-        <title>AC 自动机 - LinJHS's Docs</title>
+        <title>哈希和哈希表 - LinJHS's Docs</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ac" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AC 自动机
+              哈希和哈希表
             
           </span>
         </div>
@@ -294,6 +294,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../03_AC-Automaton/" class="md-nav__link">
+        AC 自动机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -306,12 +320,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          AC 自动机
+          哈希和哈希表
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        AC 自动机
+        哈希和哈希表
       </a>
       
         
@@ -330,15 +344,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    介绍
+  <a href="#hash" class="md-nav__link">
+    哈希 Hash
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    详解
+  <a href="#hash-table" class="md-nav__link">
+    哈希表 Hash Table
   </a>
   
 </li>
@@ -347,20 +361,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../04_Hash/" class="md-nav__link">
-        哈希和哈希表
-      </a>
     </li>
   
 
@@ -561,15 +561,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    介绍
+  <a href="#hash" class="md-nav__link">
+    哈希 Hash
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    详解
+  <a href="#hash-table" class="md-nav__link">
+    哈希表 Hash Table
   </a>
   
 </li>
@@ -588,40 +588,42 @@
                 
 
 
-<h1 id="ac">AC 自动机</h1>
-<h2 id="_1">介绍</h2>
-<p>Aho-Corasick automaton，是著名的多模匹配算法。</p>
-<p>一个常见的例子就是给出 <code>n</code> 个单词，再给出一段包含 <code>m</code> 个字符的文章，让你找出有多少个单词在文章里出现过。</p>
-<h2 id="_2">详解</h2>
-<p>AC 自动机就是 Trie 树上的 KMP。</p>
-<p>详见代码：<a href="../03_AC-Automaton_%E7%BB%9F%E8%AE%A1%E5%8D%95%E8%AF%8D%E5%87%BA%E7%8E%B0%E4%B8%AA%E6%95%B0.cpp">Code</a></p>
-<p>AC 自动机的关键点与 KMP 一样，需要构建出失配指针 <code>fail[]</code> 数组（也就是 KMP 的 <code>next[]</code> ）。</p>
-<p><code>fail[]</code> 构建的核心代码（即下面程序中的 <code>nxt[]</code> ）</p>
-<pre><code class="language-cpp">void bfs()
+<h1 id="_1">哈希和哈希表</h1>
+<h2 id="hash">哈希 Hash</h2>
+<p>应用：将一串字符串转变为数字</p>
+<p>字符串哈希核心代码：</p>
+<pre><code class="language-cpp">typedef unsigned long long ULL;
+const int b=26;//进制 
+ULL hash()
 {
-    for(int i=0;i&lt;=25;++i)
-        ch[0][i]=1;//0 结点的每一个字符都指向 root 结点（初始化） 
-    que[1]=1;
-    nxt[1]=0;//构建 nxt 数组，root 默认指向 0 结点 
-    for(int q1=1,q2=1;q1&lt;=q2;++q1)//BFS 
+    ULL sum=0;
+    for(int i=1;i&lt;=m;++i)
+        sum=sum*b+(ULL)(s[i]-'a'+1);//b进制 
+    return sum;
+}
+</code></pre>
+<h2 id="hash-table">哈希表 Hash Table</h2>
+<p>例题：<a href="../04_Hash_%E4%BE%8B%E9%A2%98-%E5%93%88%E5%B8%8C%E8%A1%A8.cpp">Code</a></p>
+<p>核心代码</p>
+<pre><code class="language-cpp">//x、y为一个元素的两个哈希值，使用双哈希思想处理哈希冲突
+void insert(int x,int y)                        //将元素插入哈希表
+{
+    //所有 x 值相同的字符串会储存在一条链表上，用 y 值区分
+    nxt[++tot]=poi[x];
+    poi[x]=tot;
+    end[tot]=y;
+}
+
+int query(int x,int y)
+{
+    for(int i=poi[x];i;i=nxt[i])                //找到则表示存在
     {
-        int u=que[q1];
-        for(int i=0;i&lt;=25;++i)
+        if(end[i]==y)
         {
-            if(!ch[u][i])//如果到叶子结点的话则通过 nxt 往回跳 
-                ch[u][i]=ch[nxt[u]][i];
-            else
-            {
-                que[++q2]=ch[u][i];
-                int v=nxt[u];
-                //符合条件的 v ：查找父亲的前缀指针(nxt)指向的节点，通过 nxt 一直跳， 
-                //直到找到该结点的有通过 i 连接的儿子 
-                while(v&gt;0 &amp;&amp; !ch[v][i])//通过 nxt 一直跳直到找到符合的 
-                    v=nxt[v];
-                nxt[ch[u][i]]=ch[v][i];//nxt 的跳转 
-            }
+            return 1;
         }
     }
+    return 0;                                   //不存在返回 0
 }
 </code></pre>
 
@@ -642,7 +644,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../02_KMP/" class="md-footer__link md-footer__link--prev" aria-label="Previous: KMP 算法" rel="prev">
+        <a href="../03_AC-Automaton/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AC 自动机" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -651,20 +653,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              KMP 算法
+              AC 自动机
             </div>
           </div>
         </a>
       
       
         
-        <a href="../04_Hash/" class="md-footer__link md-footer__link--next" aria-label="Next: 哈希和哈希表" rel="next">
+        <a href="../../02_Tree/01_LCA/" class="md-footer__link md-footer__link--next" aria-label="Next: 求 LCA（最近公共祖先）" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              哈希和哈希表
+              求 LCA（最近公共祖先）
             </div>
           </div>
           <div class="md-footer__button md-icon">

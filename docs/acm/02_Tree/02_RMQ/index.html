@@ -1,0 +1,899 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>RMQ 问题（区间最值问题） - LinJHS's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rmq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LinJHS&#39;s Docs" class="md-header__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LinJHS's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RMQ 问题（区间最值问题）
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LinJHS&#39;s Docs" class="md-nav__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LinJHS's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to LinJHS's Website
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Acm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Acm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Acm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../acm/" class="md-nav__link">
+        ACM Note
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          01 String
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 String" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          01 String
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_String/01_TrieTree/" class="md-nav__link">
+        Trie 树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_String/02_KMP/" class="md-nav__link">
+        KMP 算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_String/03_AC-Automaton/" class="md-nav__link">
+        AC 自动机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_String/04_Hash/" class="md-nav__link">
+        哈希和哈希表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          02 Tree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="02 Tree" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          02 Tree
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_LCA/" class="md-nav__link">
+        求 LCA（最近公共祖先）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RMQ 问题（区间最值问题）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        RMQ 问题（区间最值问题）
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主要方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st" class="md-nav__link">
+    ST 算法
+  </a>
+  
+    <nav class="md-nav" aria-label="ST 算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    一、简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    二、详细步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    三、算法流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rmq_1" class="md-nav__link">
+    RMQ 标准算法
+  </a>
+  
+    <nav class="md-nav" aria-label="RMQ 标准算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    一、简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    二、详细步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          03 Graph
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 Graph" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          03 Graph
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/01_MST/" class="md-nav__link">
+        最小生成树 MST
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          04 ComputationalGeometry
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="04 ComputationalGeometry" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          04 ComputationalGeometry
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_ComputationalGeometry/01_ConvexHull/" class="md-nav__link">
+        凸包（Convex Hull）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    主要方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#st" class="md-nav__link">
+    ST 算法
+  </a>
+  
+    <nav class="md-nav" aria-label="ST 算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    一、简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    二、详细步骤
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    三、算法流程
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rmq_1" class="md-nav__link">
+    RMQ 标准算法
+  </a>
+  
+    <nav class="md-nav" aria-label="RMQ 标准算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    一、简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    二、详细步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="rmq">RMQ 问题（区间最值问题）</h1>
+<h2 id="_1">介绍</h2>
+<p>RMQ (Range Minimum/Maximum Query) 问题是指：</p>
+<p>对于长度为 <code>n</code> 的数列 <code>A</code> ，回答若干询问 <code>RMQ(A,i,j)</code> <span class="arithmatex">\((i,j\le n)\)</span> ，返回数列 <code>A</code> 中下标在 <code>i</code> , <code>j</code> 里的最小（大）值，也就是说，RMQ问题是指求区间最值的问题。</p>
+<p>时间复杂度: <code>O(N)~O(logN)</code></p>
+<h2 id="_2">主要方法</h2>
+<ol>
+<li>朴素（即搜索）， <code>O(n)~O(qn)</code> ，online。</li>
+<li>线段树， <code>O(n)~O(qlogn)</code> ，online。</li>
+<li>ST （实质是动态规划）， <code>O(nlogn)~O(q)</code> ，online。  </li>
+<li>RMQ 标准算法：先规约成 LCA (Lowest Common Ancestor) ，再规约成约束 RMQ ， <code>O(n)-O(q)</code> ，online。</li>
+</ol>
+<h2 id="st">ST 算法</h2>
+<p>代码：<a href="../02_RMQ_%E6%95%B0%E5%88%97%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%80%BC.cpp">Code</a></p>
+<h3 id="_3">一、简介</h3>
+<p>ST 算法 (Sparse Table) 。</p>
+<p>以求最大值为例，设 <code>f[i,j]</code> 表示 <span class="arithmatex">\([i,i+2^j-1]\)</span> 这个区间内的最大值，那么在询问到 <span class="arithmatex">\([a,b]\)</span> 区间的最大值时答案就是 <code>max(f[a,k], f[b-2^k+1,k])</code> ，其中 <code>k</code> 是满足 <span class="arithmatex">\(2^k\le b-a+1\)</span> （即长度）的最大的 <code>k</code> ，即 <span class="arithmatex">\(k=[\frac{\ln(b-a+1)}{\ln(2)}]\)</span> 。</p>
+<p><code>f[][]</code> 的求法可以用动态规划， <code>f[i,j]=max(f[i,j-1],f[i+2^(j-1),j-1])</code> 。</p>
+<h3 id="_4">二、详细步骤</h3>
+<p>来看一下 ST 算法是怎么实现的（以最大值为例）：</p>
+<p>首先是预处理，用一个 DP 解决。设 <code>a</code> 是要求区间最值的数列， <code>f[i,j]</code> 表示从第 <span class="arithmatex">\(i\)</span> 个数起连续 <span class="arithmatex">\(2^j\)</span> 个数中的最大值。</p>
+<p>例如数列 <code>3 2 4 5 6 8 1 2 9 7</code></p>
+<p><code>f[1,0]</code> 表示第 <span class="arithmatex">\(1\)</span> 个数起，长度为 <span class="arithmatex">\(2^0=1\)</span> 的最大值，其实就是 <code>3</code> 这个数。</p>
+<p><code>f[1,1]=3</code> ， <code>f[1,2]=5</code> ， <code>f[1,3]=8</code> ， <code>f[2,0]=2</code> ， <code>f[2,1]=4</code> ……</p>
+<p>从这里可以看出 <code>f[i,0]</code> 其实就等于 <code>a[i]</code> 。这样， DP 的状态、初值都已经有了，剩下的就是状态转移方程。</p>
+<p>我们把 <code>f[i,j]</code> <span class="arithmatex">\((j\ge 1)\)</span> 平均分成两段（因为 <span class="arithmatex">\(j\ge 1\)</span>时， <code>f[i,j]</code> 一定是偶数个数字），从 <span class="arithmatex">\(i\)</span> 到 <span class="arithmatex">\(i+2^{j-1}-1\)</span> 为一段， <span class="arithmatex">\(i+2^{j-1}\)</span> 到 <span class="arithmatex">\(i+2^j-1\)</span> 为一段（长度都为 <span class="arithmatex">\(2^{j-1}\)</span> ）。</p>
+<p>用上例说明，当 <code>i=1</code> , <code>j=3</code> 时就是 <code>3,2,4,5</code> 和 <code>6,8,1,2</code> 这两段。 <code>f[i,j]</code> 就是这两段的最大值中的最大值。</p>
+<p>于是我们得到了动规方程 <code>f[i,j]=max(f[i,j-1],f[i+2^(j-1),j-1])</code> 。</p>
+<p>接下来是得出最值，也许你想不到计算出 <code>f</code> 有什么用处，一般要想计算 max 还是要 <code>O(logn)</code> ，甚至 <code>O(n)</code> 。但有一个很好的办法，做到了 <code>O(1)</code> 。</p>
+<p>还是分开来。如在上例中我们要求区间 <code>[2,8]</code> 的最大值，就要把它分成 <code>[2,5]</code> 和 <code>[5,8]</code> 两个区间，因为这两个区间的最大值我们可以直接由 <code>f[2,2]</code> 和 <code>f[5,2]</code> 得到。</p>
+<p>扩展到一般情况，就是把区间 <span class="arithmatex">\([l,r]\)</span> 分成两个长度为 <span class="arithmatex">\(2^n\)</span> 的区间（保证有 <code>f</code> 对应）。直接给出表达式：</p>
+<pre><code class="language-cpp">    k=floor(ln(r-l+1)/ln(2));
+    ans=max(f[l][k],f[r-2^k+1][k]);
+</code></pre>
+<p>这样就计算了从 <span class="arithmatex">\(l\)</span> 开始，长度为 <span class="arithmatex">\(2^k\)</span> 的区间和从 <span class="arithmatex">\(r-2^k+1\)</span> 开始长度为 <span class="arithmatex">\(2^k\)</span> 的区间的最大值，二者中的较大者就是整个区间 <span class="arithmatex">\([l,r]\)</span> 上的最大值。</p>
+<h3 id="_5">三、算法流程</h3>
+<ol>
+<li>
+<p>预处理<br />
+实质：动态规划<br />
+设 <code>a[1...n]</code> ，设 <code>f[i][j]</code> 表示从 <code>a[i]</code> 到 <code>a[i+2j-1]</code> 最大值，共 <span class="arithmatex">\(2^j\)</span> 个。<br />
+由于共 <span class="arithmatex">\(2^j\)</span> 个，可将其分成两份，分别是 <code>f[i][j-1]</code> 和 <code>f[i+2^j-1][j-1]</code> 。<br />
+状态转移方程：<br />
+<code>f[i][j]=max(f[i][j-1],f[i+2^j-1][j-1])</code><br />
+边界条件为 <code>f[i][0]=a[i]</code><br />
+时间复杂度 <code>O(nlogn)</code></p>
+</li>
+<li>
+<p>询问<br />
+若我们询问区间 <span class="arithmatex">\([l,r]\)</span> 的最大值，则先求出最大的 <span class="arithmatex">\(x\)</span> 满足 <span class="arithmatex">\(2^x\le r-l+1\)</span> ，那么区间 <span class="arithmatex">\([l,r]=[l,l+2^x-1]\cup [r-2^x+1,r]\)</span><br />
+那么 <span class="arithmatex">\([l,r]\)</span> 的最大值为 <code>max(f[l][x],f[r-2^x+1][x])</code>，可在 <code>O(1)</code> 内算出。<br />
+虽然有交集，但并不影响，这就是 ST 算法只适用于求区间最值的原因。<br />
+对于求区间 <span class="arithmatex">\([x,y]\)</span><br />
+<code>K=log2(y-x+1)</code><br />
+<code>ans=max(f[x][k],f[y-2^k+1][k])</code></p>
+</li>
+<li>
+<p>技巧<br />
+因为 cmath 库中的 <code>log2()</code> 函数效率不高，所以除了调用 <code>log2()</code> 函数外，通常还会使用 <code>O(N)</code> 递推预处理出 <span class="arithmatex">\(1\ldots N\)</span> 这 <span class="arithmatex">\(N\)</span> 种区间长度各自对应的 <span class="arithmatex">\(k\)</span> 值。具体地，设 <code>log[d]</code> 表示 <span class="arithmatex">\(\log_2(d)\)</span> 向下取整，则 <code>log[d]=log[d/2]+1</code> 。</p>
+</li>
+</ol>
+<h2 id="rmq_1">RMQ 标准算法</h2>
+<h3 id="_6">一、简介</h3>
+<p>首先根据原数列，建立笛卡尔树，从而将问题在线性时间内规约为 LCA 问题。 LCA 问题可以在线性时间内规约为约束 RMQ ，也就是数列中任意两个相邻的数的差都是 <code>+1</code> 或 <code>-1</code> 的 RMQ 问题。约束 RMQ 有 <code>O(n)~O(1)</code> 的在线解法，故整个算法的时间复杂度为 <code>O(n)~O(1)</code> 。</p>
+<h3 id="_7">二、详细步骤</h3>
+<p><strong>建立笛卡尔树</strong></p>
+<p>数组 <code>A[0,N-1]</code> 的笛卡尔树 <span class="arithmatex">\(C\)</span> 是这样一棵二叉树：</p>
+<ul>
+<li>当 <code>N=0</code> ，它是一棵空树</li>
+<li>否则它的根节点是 <code>A</code> 中的一个最小元素 <code>A[i]</code> （并以这个最小元素的下标i标记），而左右子树分别是 <code>A[0,i-1]</code> 和 <code>A[i+1,N-1]</code> 的一棵笛卡尔树。</li>
+</ul>
+<p>注意如果 <code>A</code> 中有相等的元素，则 <code>A</code> 的笛卡尔树不一定唯一，但在这里我们限定所用的最小元素为在数组中最先出现者，在此限制下笛卡尔树是唯一的。</p>
+<p>容易看出，数组 <code>A</code> 在闭区间 <span class="arithmatex">\([l,r]\)</span> 上的最小值等同于笛卡尔树 <span class="arithmatex">\(C\)</span> 中下标为 <span class="arithmatex">\(l\)</span> 和 <span class="arithmatex">\(r\)</span> 的两个顶点的最近公共祖先（LCA）的值。</p>
+<p>由此， RMQ 问题可以转化为 LCA 问题。</p>
+<p>下面说明如何在 <code>O(n)</code> 时间内实现这一转化。</p>
+<p>我们将要将 <code>A</code> 的元素依次插入笛卡尔树 <span class="arithmatex">\(C\)</span> 。每次插入都可能使树的形态发生变化。</p>
+<p>为了在 <code>O(N)</code> 的时间内完成整个插入过程，考虑 <span class="arithmatex">\(C\)</span> 的右链，即根结点、根结点的右儿子、根结点的右儿子的右儿子……组成的链。</p>
+<p>注意这些元素的下标和值都是递增的。下标最大，即将要插入的元素 <code>A[i]</code> 一定是新树右链的最后一个元素。原来的右链中，值比 <code>A[i]</code> 大的元素在新树中不再属于右链，这些元素组成的链成为 <code>A[i]</code> 的左子树的右链；原来右链中的其它元素加上A[i]组成了新的右链。</p>
+<p>初看起来，寻找分界点的最佳方法是 <code>O(logN)</code> 时间的二分查找；但是对于整个过程来说， <code>O(NlogN)</code> 的时间复杂度不是最优的。关键在于一旦一个元素比 <code>A[i]</code> 大，它就从右链中被永久地移除了。</p>
+<p>如果按照从后到前的顺序判断一个元素是否大于 <code>A[i]</code> ，则每次插入的时间复杂度为 <code>O(k+1)</code> ， <code>k</code> 为本次插入中移除的右链元素个数。因为每个元素最多进出右链各一次，所以整个过程的时间复杂度为 <code>O(N)</code> 。</p>
+<p>用一个栈结构维护右链元素的下标，上述过程可以很容易地实现。（见下面代码部分）</p>
+<p><strong>转化为约束RMQ</strong>（以下部分未理解）</p>
+<p>为了将 LCA 问题转化为约束 RMQ ，我们注意到任意树中两个结点 <code>u</code> 和 <code>v</code> 的 LCA 就是在一次从树根开始的深度优先搜索中，在 <code>u</code> 和 <code>v</code> 之间（包括回溯时）到达的结点中层数最小的一个。为了利用这一事实，我们建立三个数组：</p>
+<ul>
+<li><code>E[1,2*N-1]</code> ：在一次深度优先搜索（恰好是树的一次欧拉环游）中每一步到达的结点。</li>
+<li><code>L[1,2*N-1]</code> ：<code>E</code> 中对应结点在树中的层数。</li>
+<li><code>H[1,N]</code> ：每个结点在 <code>E</code> 中某一次出现的下标（不妨设为第一次）。</li>
+</ul>
+<p>则对任意 <code>u</code> 和 <code>v</code> ，不妨设 <code>H[u]&lt;=H[v]</code> （否则交换 <code>u</code> 和 <code>v</code> ），只要在 <code>L</code> 中找到 <code>[H[u],H[v]]</code> 中最小值的下标 <code>i</code> ，则 <code>E[i]</code> 就是 <code>u</code> 和 <code>v</code> 的 LCA 。注意到 <code>L</code> 满足约束 RMQ 的条件（相邻元素差的绝对值为 <span class="arithmatex">\(1\)</span> ），这说明原来的 LCA 问题已经被转化为约束 RMQ 。转化过程显然能在 <code>O(N)</code> 时间内完成。</p>
+<p><strong>约束RMQ的解法</strong></p>
+<p>现在仍旧用 <code>A[0,N-1]</code> 表示问题中的数列，这里有 <code>|A[i]-A[i-1]|=1</code> <span class="arithmatex">\((i=1,2,\ldots,N-1)\)</span>成立。</p>
+<p>将 <code>A</code> 分解为长度为 <span class="arithmatex">\(l=[(\log_2{N})/2]\)</span> 的块。设 <code>A'[i]</code> 为第i块中的最小值， <code>B[i]</code> 为该最小值的位置。 <code>A'[i]</code> 和 <code>B[i]</code> 的长度均为 <span class="arithmatex">\(N/l\)</span>， 所以用 ST 算法处理 <code>A'</code> 数组的时空复杂度均为 <code>O(N/l*log(N/l))=O(N/logN*(logN-logl))=O(N)</code> 。预处理之后，对任意多连续的块进行的查询都能在 <code>O(1)</code> 时间内实现。余下的问题是如何进行块内查询。</p>
+<p>注意到对任意一块中的块内查询的结果有影响的唯一因素是块内每相邻两个元素间的“升降关系”构成的序列。因为每两个元素之间的关系只有两种（“ <span class="arithmatex">\(+1\)</span> ”、“ <span class="arithmatex">\(-1\)</span> ”），而块的长度又只有 <span class="arithmatex">\(l=[(\log_2{N})/2]\)</span> ，所以本质不同的块最多有 <span class="arithmatex">\(2^l=O(\sqrt{N})\)</span> 种。对每种块中所有可能的块内查询预处理出答案的时空复杂度是 <span class="arithmatex">\(O(\sqrt{N\times l^2})=O(N)\)</span> <em>（注：这个式子不一定正确，有空记得确认一下）</em>（这里的 <span class="arithmatex">\(O(N)\)</span> 表示不超过线性时间）。预处理出所有块的“类型”，并用二进制数存储的时间复杂度是 <code>O(N)</code> 。</p>
+<p>此后，每次查询可以分为两种情况：</p>
+<ol>
+<li>块内查询，答案已经被预处理出，只要在数组中找到它即可。</li>
+<li>块间查询，可以分解为 <span class="arithmatex">\(2\)</span> 个块内查询，和一个 <code>A'</code> 上的 RMQ ，三者的时间复杂度都是 <code>O(1)</code> 。</li>
+</ol>
+<p>综上，我们给出了一个预处理时间为 <code>O(n)</code> ，查询时间为 <code>O(1)</code> 的在线 RMQ 算法。</p>
+<p>核心代码：</p>
+<pre><code class="language-cpp">\\TODO
+</code></pre>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../01_LCA/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 求 LCA（最近公共祖先）" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              求 LCA（最近公共祖先）
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../03_Graph/01_MST/" class="md-footer__link md-footer__link--next" aria-label="Next: 最小生成树 MST" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              最小生成树 MST
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
