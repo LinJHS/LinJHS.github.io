@@ -13,7 +13,7 @@
     
     
       
-        <title>凸包（Convex Hull） - LinJHS's Docs</title>
+        <title>双连通分量 - LinJHS's Docs</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convex-hull" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              凸包（Convex Hull）
+              双连通分量
             
           </span>
         </div>
@@ -388,12 +388,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
       
       
       
@@ -416,7 +418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/01_MST/" class="md-nav__link">
+      <a href="../01_MST/" class="md-nav__link">
         最小生成树 MST
       </a>
     </li>
@@ -430,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/02_ShortPath/" class="md-nav__link">
+      <a href="../02_ShortPath/" class="md-nav__link">
         最短路问题
       </a>
     </li>
@@ -444,7 +446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/03_StronglyConnectedComponents/" class="md-nav__link">
+      <a href="../03_StronglyConnectedComponents/" class="md-nav__link">
         强连通分量
       </a>
     </li>
@@ -458,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/04_DFS-Tree/" class="md-nav__link">
+      <a href="../04_DFS-Tree/" class="md-nav__link">
         DFS 树
       </a>
     </li>
@@ -472,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/05_CutVertexAndCutEdge/" class="md-nav__link">
+      <a href="../05_CutVertexAndCutEdge/" class="md-nav__link">
         割点和桥
       </a>
     </li>
@@ -484,11 +486,66 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../03_Graph/06_BiconnectedComponent/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          双连通分量
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         双连通分量
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    点双连通分量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    边双连通分量
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -500,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/07_BipartiteGraph/" class="md-nav__link">
+      <a href="../07_BipartiteGraph/" class="md-nav__link">
         二分图
       </a>
     </li>
@@ -519,14 +576,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
       
       
       
@@ -547,59 +602,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          凸包（Convex Hull）
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../04_ComputationalGeometry/01_ConvexHull/" class="md-nav__link">
         凸包（Convex Hull）
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    凸包的定义
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    求法
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -754,15 +761,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    凸包的定义
+  <a href="#_2" class="md-nav__link">
+    定义
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    求法
+  <a href="#_3" class="md-nav__link">
+    点双连通分量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    边双连通分量
   </a>
   
 </li>
@@ -781,19 +795,26 @@
                 
 
 
-<h1 id="convex-hull">凸包（Convex Hull）</h1>
-<h2 id="_1">凸包的定义</h2>
-<p>凸包（Convex Hull）是一个计算几何（图形学）中的概念。</p>
-<p>在一个实数向量空间 <span class="arithmatex">\(V\)</span> 中，对于给定集合 <span class="arithmatex">\(X\)</span> ，所有包含 <span class="arithmatex">\(X\)</span> 的凸集的交集 <span class="arithmatex">\(S\)</span> 被称为 <span class="arithmatex">\(X\)</span> 的凸包。 <span class="arithmatex">\(X\)</span> 的凸包可以用 <span class="arithmatex">\(X\)</span> 内所有点 <span class="arithmatex">\((X_1,...,X_n)\)</span> 的凸组合来构造.</p>
-<p>在二维欧几里得空间中，凸包可想象为一条刚好包着所有点的橡皮圈。</p>
-<p>用不严谨的话来讲，给定二维平面上的点集，凸包就是将最外层的点连接起来构成的凸多边形，它能包含点集中所有的点。</p>
-<h2 id="_2">求法</h2>
-<p><a href="../01_ConvexHull_%E6%B1%82%E5%87%B8%E5%8C%85%E5%91%A8%E9%95%BF.cpp">Code</a></p>
-<ul>
-<li>以左下角的点为初始点，剩下的点按照以初始点为中心逆时针的方向进行排序（如果共线的话距离初始点近的排在前面，使用向量叉乘判断）。</li>
-<li>特判只有一个点或者两个点的情况。</li>
-<li>不止两个点的话，按顺序枚举每个点作为新点，如果最后两个点与新点不构成逆时针（用向量叉乘判断）也就是凸包的话，删掉最后一个点，直到找到满足条件的新点，将新点加入。</li>
-</ul>
+<h1 id="_1">双连通分量</h1>
+<h2 id="_2">定义</h2>
+<p>双连通分量又分点双连通分量和边双连通分量两种。</p>
+<p>若一个无向图中的去掉任意一个节点（一条边）都不会改变此图的连通性，即不存在割点（桥），则称作点（边）双连通图。</p>
+<p>一个无向图中的每一个极大点（边）双连通子图称作此无向图的点（边）双连通分量。</p>
+<p>求双连通分量可用 Tarjan 算法。</p>
+<h2 id="_3">点双连通分量</h2>
+<p>若一个无向图中的去掉任意一个节点都不会改变此图的连通性，即不存在割点，则称作点双连通图。</p>
+<p>一个无向图中的每一个极大点双连通子图称作此无向图的点双连通分量。</p>
+<p>注意：一个割点属于多个点双连通分量。</p>
+<p>代码实现：</p>
+<pre><code>\\TODO
+</code></pre>
+<h2 id="_4">边双连通分量</h2>
+<p>若一个无向图中的去掉任意一条边都不会改变此图的连通性，即不存在桥，则称作边双连通图。</p>
+<p>一个无向图中的每一个极大边双连通子图称作此无向图的边双连通分量。</p>
+<p>连接两个边双连通分量的边即是桥。</p>
+<p>代码实现：</p>
+<pre><code>\\TODO
+</code></pre>
 <hr />
 <p><em>注：部分资料来源于百度百科</em></p>
 <hr />
@@ -816,7 +837,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../03_Graph/07_BipartiteGraph/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 二分图" rel="prev">
+        <a href="../05_CutVertexAndCutEdge/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 割点和桥" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -825,20 +846,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              二分图
+              割点和桥
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../ctf/ctf/" class="md-footer__link md-footer__link--next" aria-label="Next: CTF" rel="next">
+        <a href="../07_BipartiteGraph/" class="md-footer__link md-footer__link--next" aria-label="Next: 二分图" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              CTF
+              二分图
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
     
     
       
-        <title>凸包（Convex Hull） - LinJHS's Docs</title>
+        <title>CTF - LinJHS's Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
           
           
@@ -40,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convex-hull" class="md-skip">
+        <a href="#ctf" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="LinJHS&#39;s Docs" class="md-header__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+    <a href="../.." title="LinJHS&#39;s Docs" class="md-header__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              凸包（Convex Hull）
+              CTF
             
           </span>
         </div>
@@ -164,7 +164,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="LinJHS&#39;s Docs" class="md-nav__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+    <a href="../.." title="LinJHS&#39;s Docs" class="md-nav__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -183,7 +183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Welcome to LinJHS's Website
       </a>
     </li>
@@ -196,14 +196,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -226,7 +224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../acm/" class="md-nav__link">
+      <a href="../../acm/acm/" class="md-nav__link">
         ACM
       </a>
     </li>
@@ -266,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01_String/01_TrieTree/" class="md-nav__link">
+      <a href="../../acm/01_String/01_TrieTree/" class="md-nav__link">
         Trie 树
       </a>
     </li>
@@ -280,7 +278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01_String/02_KMP/" class="md-nav__link">
+      <a href="../../acm/01_String/02_KMP/" class="md-nav__link">
         KMP 算法
       </a>
     </li>
@@ -294,7 +292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01_String/03_AC-Automaton/" class="md-nav__link">
+      <a href="../../acm/01_String/03_AC-Automaton/" class="md-nav__link">
         AC 自动机
       </a>
     </li>
@@ -308,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01_String/04_Hash/" class="md-nav__link">
+      <a href="../../acm/01_String/04_Hash/" class="md-nav__link">
         哈希和哈希表
       </a>
     </li>
@@ -355,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02_Tree/01_LCA/" class="md-nav__link">
+      <a href="../../acm/02_Tree/01_LCA/" class="md-nav__link">
         求 LCA（最近公共祖先）
       </a>
     </li>
@@ -369,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02_Tree/02_RMQ/" class="md-nav__link">
+      <a href="../../acm/02_Tree/02_RMQ/" class="md-nav__link">
         RMQ 问题（区间最值问题）
       </a>
     </li>
@@ -416,7 +414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/01_MST/" class="md-nav__link">
+      <a href="../../acm/03_Graph/01_MST/" class="md-nav__link">
         最小生成树 MST
       </a>
     </li>
@@ -430,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/02_ShortPath/" class="md-nav__link">
+      <a href="../../acm/03_Graph/02_ShortPath/" class="md-nav__link">
         最短路问题
       </a>
     </li>
@@ -444,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/03_StronglyConnectedComponents/" class="md-nav__link">
+      <a href="../../acm/03_Graph/03_StronglyConnectedComponents/" class="md-nav__link">
         强连通分量
       </a>
     </li>
@@ -458,7 +456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/04_DFS-Tree/" class="md-nav__link">
+      <a href="../../acm/03_Graph/04_DFS-Tree/" class="md-nav__link">
         DFS 树
       </a>
     </li>
@@ -472,7 +470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/05_CutVertexAndCutEdge/" class="md-nav__link">
+      <a href="../../acm/03_Graph/05_CutVertexAndCutEdge/" class="md-nav__link">
         割点和桥
       </a>
     </li>
@@ -486,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/06_BiconnectedComponent/" class="md-nav__link">
+      <a href="../../acm/03_Graph/06_BiconnectedComponent/" class="md-nav__link">
         双连通分量
       </a>
     </li>
@@ -500,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03_Graph/07_BipartiteGraph/" class="md-nav__link">
+      <a href="../../acm/03_Graph/07_BipartiteGraph/" class="md-nav__link">
         二分图
       </a>
     </li>
@@ -519,14 +517,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
       
       
       
@@ -547,59 +543,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          凸包（Convex Hull）
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../acm/04_ComputationalGeometry/01_ConvexHull/" class="md-nav__link">
         凸包（Convex Hull）
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    凸包的定义
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    求法
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -624,12 +572,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -650,11 +600,59 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../ctf/ctf/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CTF
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         CTF
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    参考链接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    汇编
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -692,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ctf/assemble/01/" class="md-nav__link">
+      <a href="../assemble/01/" class="md-nav__link">
         寄存器
       </a>
     </li>
@@ -706,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ctf/assemble/02/" class="md-nav__link">
+      <a href="../assemble/02/" class="md-nav__link">
         汇编常用指令
       </a>
     </li>
@@ -755,14 +753,14 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    凸包的定义
+    参考链接
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    求法
+    汇编
   </a>
   
 </li>
@@ -781,21 +779,16 @@
                 
 
 
-<h1 id="convex-hull">凸包（Convex Hull）</h1>
-<h2 id="_1">凸包的定义</h2>
-<p>凸包（Convex Hull）是一个计算几何（图形学）中的概念。</p>
-<p>在一个实数向量空间 <span class="arithmatex">\(V\)</span> 中，对于给定集合 <span class="arithmatex">\(X\)</span> ，所有包含 <span class="arithmatex">\(X\)</span> 的凸集的交集 <span class="arithmatex">\(S\)</span> 被称为 <span class="arithmatex">\(X\)</span> 的凸包。 <span class="arithmatex">\(X\)</span> 的凸包可以用 <span class="arithmatex">\(X\)</span> 内所有点 <span class="arithmatex">\((X_1,...,X_n)\)</span> 的凸组合来构造.</p>
-<p>在二维欧几里得空间中，凸包可想象为一条刚好包着所有点的橡皮圈。</p>
-<p>用不严谨的话来讲，给定二维平面上的点集，凸包就是将最外层的点连接起来构成的凸多边形，它能包含点集中所有的点。</p>
-<h2 id="_2">求法</h2>
-<p><a href="../01_ConvexHull_%E6%B1%82%E5%87%B8%E5%8C%85%E5%91%A8%E9%95%BF.cpp">Code</a></p>
+<h1 id="ctf">CTF</h1>
+<h2 id="_1">参考链接</h2>
 <ul>
-<li>以左下角的点为初始点，剩下的点按照以初始点为中心逆时针的方向进行排序（如果共线的话距离初始点近的排在前面，使用向量叉乘判断）。</li>
-<li>特判只有一个点或者两个点的情况。</li>
-<li>不止两个点的话，按顺序枚举每个点作为新点，如果最后两个点与新点不构成逆时针（用向量叉乘判断）也就是凸包的话，删掉最后一个点，直到找到满足条件的新点，将新点加入。</li>
+<li><a href="https://ctf-wiki.org">CTF wiki</a></li>
 </ul>
-<hr />
-<p><em>注：部分资料来源于百度百科</em></p>
+<h2 id="_2">汇编</h2>
+<ul>
+<li><a href="../assemble/01/">寄存器</a></li>
+<li><a href="../assemble/02/">汇编常用指令</a></li>
+</ul>
 <hr />
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
 
@@ -816,7 +809,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../03_Graph/07_BipartiteGraph/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 二分图" rel="prev">
+        <a href="../../acm/04_ComputationalGeometry/01_ConvexHull/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 凸包（Convex Hull）" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -825,20 +818,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              二分图
+              凸包（Convex Hull）
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../../ctf/ctf/" class="md-footer__link md-footer__link--next" aria-label="Next: CTF" rel="next">
+        <a href="../assemble/01/" class="md-footer__link md-footer__link--next" aria-label="Next: 寄存器" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              CTF
+              寄存器
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -869,12 +862,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

@@ -227,7 +227,7 @@
   
     <li class="md-nav__item">
       <a href="../../acm/" class="md-nav__link">
-        ACM Note
+        ACM
       </a>
     </li>
   
@@ -515,6 +515,90 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/02_ShortPath/" class="md-nav__link">
+        最短路问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/03_StronglyConnectedComponents/" class="md-nav__link">
+        强连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/04_DFS-Tree/" class="md-nav__link">
+        DFS 树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/05_CutVertexAndCutEdge/" class="md-nav__link">
+        割点和桥
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/06_BiconnectedComponent/" class="md-nav__link">
+        双连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_Graph/07_BipartiteGraph/" class="md-nav__link">
+        二分图
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -556,6 +640,115 @@
     <li class="md-nav__item">
       <a href="../../04_ComputationalGeometry/01_ConvexHull/" class="md-nav__link">
         凸包（Convex Hull）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ctf
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ctf" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ctf
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf/ctf/" class="md-nav__link">
+        CTF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Assemble
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assemble" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Assemble
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf/assemble/01/" class="md-nav__link">
+        寄存器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf/assemble/02/" class="md-nav__link">
+        汇编常用指令
       </a>
     </li>
   
@@ -755,7 +948,7 @@
 <li>这时把当前结点也设为已被检查过的，同时可以处理有关当前结点的 LCA 询问：如果有一个从当前结点到结点 <code>v</code> 的询问，且 <code>v</code> 已被检查过，则由于进行的是深度优先搜索，当前结点与 <code>v</code> 的最近公共祖先一定还没有被检查，而这个最近公共祖先的包涵 <code>v</code> 的子树一定已经搜索过了，那么这个最近公共祖先一定是 <code>v</code> 所在集合的祖先。</li>
 </ul>
 <p><img alt="LCA 例题图片" src="../01_LCA_pic.png" /></p>
-<p>如图：</p>
+<p>如图</p>
 <p>根据实现算法可以看出，只有当某一棵子树全部遍历处理完成后，才将该子树的根节点标记为黑色（初始化是白色），假设程序按上面的树形结构进行遍历：</p>
 <ul>
 <li>首先从节点 <code>1</code> 开始，然后递归处理根为 <code>2</code> 的子树，当子树 <code>2</code> 处理完毕后，节点 <code>2</code> 、 <code>5</code> 、 <code>6</code> 均为黑色；</li>
@@ -775,6 +968,10 @@
 <p>对于1， <code>LCA(u,v)</code> 明显为 <code>u</code> , <code>v</code> 两点中深度较小的点，即 <code>min(deep[u],deep[v])</code> 。</p>
 <p>对于2，我们只要想办法将 <code>u</code> , <code>v</code> 两点转移到同一条重链上即可。</p>
 <p>所以，我们可以将 <code>u</code> , <code>v</code> 一直上调，每次将 <code>u</code> , <code>v</code> 调至重链顶端，直到 <code>u</code> , <code>v</code> 两点在同一条重链上即可。</p>
+<hr />
+<p><em>注：部分资料来源于百度百科</em></p>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
 
 
 

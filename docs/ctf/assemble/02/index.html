@@ -1,0 +1,1918 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>汇编常用指令 - LinJHS's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LinJHS&#39;s Docs" class="md-header__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LinJHS's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              汇编常用指令
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LinJHS&#39;s Docs" class="md-nav__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LinJHS's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to LinJHS's Website
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Acm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Acm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Acm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/acm/" class="md-nav__link">
+        ACM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          01 String
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 String" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          01 String
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/01_TrieTree/" class="md-nav__link">
+        Trie 树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/02_KMP/" class="md-nav__link">
+        KMP 算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/03_AC-Automaton/" class="md-nav__link">
+        AC 自动机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/04_Hash/" class="md-nav__link">
+        哈希和哈希表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          02 Tree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="02 Tree" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          02 Tree
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/01_LCA/" class="md-nav__link">
+        求 LCA（最近公共祖先）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/02_RMQ/" class="md-nav__link">
+        RMQ 问题（区间最值问题）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          03 Graph
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 Graph" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          03 Graph
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/01_MST/" class="md-nav__link">
+        最小生成树 MST
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/02_ShortPath/" class="md-nav__link">
+        最短路问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/03_StronglyConnectedComponents/" class="md-nav__link">
+        强连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/04_DFS-Tree/" class="md-nav__link">
+        DFS 树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/05_CutVertexAndCutEdge/" class="md-nav__link">
+        割点和桥
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/06_BiconnectedComponent/" class="md-nav__link">
+        双连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/07_BipartiteGraph/" class="md-nav__link">
+        二分图
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          04 ComputationalGeometry
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="04 ComputationalGeometry" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          04 ComputationalGeometry
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/04_ComputationalGeometry/01_ConvexHull/" class="md-nav__link">
+        凸包（Convex Hull）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ctf
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ctf" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ctf
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/" class="md-nav__link">
+        CTF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Assemble
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Assemble" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Assemble
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        寄存器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          汇编常用指令
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        汇编常用指令
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 通用数据传送指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 输入输出端口存送指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 目的地址传送指令。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 标志传送指令。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 算术运算指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 逻辑运算指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 串指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 程序转移指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6 伪指令
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 通用数据传送指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 输入输出端口存送指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 目的地址传送指令。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    1.4 标志传送指令。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 算术运算指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 逻辑运算指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 串指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5 程序转移指令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6 伪指令
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="_1">汇编常用指令</h1>
+<h2 id="11">1.1 通用数据传送指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOV</td>
+<td>向寄存器或内存写入数据</td>
+<td><code>mov eax,1</code><br><code>mov ecx,eax</code><br><code>mov byte ptr ds:[0xFFFFFFFF],1</code></td>
+<td>其中，数据类型有<br><code>byte</code> ，<code>word</code> ，<code>dword</code> ，<code>qword</code><br>内存地址有多种写法<br><code>ds:[0x10000000]</code><br><code>ds:[0x10000000+4]</code><br><code>ds:[eax]</code><br><code>ds:[eax+4]</code></td>
+</tr>
+<tr>
+<td>MOVSX</td>
+<td>先符号扩展，再传送</td>
+<td><code>mov BL,0x80</code><br><code>movsx AX,BL</code></td>
+<td>运行完以上汇编语句之后，<code>AX</code> 的值为 <code>0xFF80</code> 。<br>由于 <code>BL</code> 为 <code>0x80 == 1000 0000</code> ，最高位也即符号位为 <code>1</code> ，在进行带符号扩展时，其扩展的高 8 位均为 <code>1</code> ，故赋值 <code>AX</code> 为 <code>1111 1111 1000 0000</code> ，即 <code>AX == 0xFF80</code> 。</td>
+</tr>
+<tr>
+<td>MOVZX</td>
+<td>先零扩展，再传送</td>
+<td><code>movzx eax,ax</code><br><code>movzx eax,ah</code></td>
+<td>令 <code>eax=0x00304000</code> <br>执行 <code>movzx eax,ax</code> 后 <code>eax == 0x00004000</code> <br>执行 <code>movzx eax,ah</code> 后 <code>eax == 0x00000040</code> 。</td>
+</tr>
+<tr>
+<td>PUSH</td>
+<td>把字压入堆栈</td>
+<td><code>push eax</code><br><code>push [eax]</code><br><code>push 0xffffffff</code></td>
+<td><code>push OPRD</code> 的操作过程是：<br>第一步，<code>SP = SP - 4</code>（32位操作系统是 <code>SP - 2</code> ）<br>第二步，将 <code>OPRD</code> 的值保存至 SP 寄存器中</td>
+</tr>
+<tr>
+<td>POP</td>
+<td>把字弹出堆栈</td>
+<td><code>pop AX</code><br><code>pop DS</code><br><code>pop [0]</code></td>
+<td>格式：<br><code>pop 寄存器</code><br><code>pop 段寄存器</code>（注：除 CS 之外的段寄存器才可）<br><code>pop 内存地址</code><br>操作过程：<br>第一步，将堆栈段中当前 <code>SS:SP</code> 所指的字内容弹出到某个寄存器或段寄存器或内存单元<br>第二步，<code>SP = SP + 2</code></td>
+</tr>
+<tr>
+<td>PUSHA</td>
+<td>把 AX，CX，DX，BX，SP，BP，SI，DI 依次压入堆栈</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POPA</td>
+<td>把 DI，SI，BP，SP，BX，DX，CX，AX 依次弹出堆栈</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUSHAD</td>
+<td>把 EAX，ECX，EDX，EBX，ESP，EBP，ESI，EDI 依次压入堆栈</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POPAD</td>
+<td>把 EDI，ESI，EBP，ESP，EBX，EDX，ECX，EAX 依次弹出堆栈</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>BSWAP</td>
+<td>交换 32 位寄存器里字节的顺序</td>
+<td><code>BSWAP EAX</code></td>
+<td>例：<br><code>EAX == 0x9668 8368</code><br>执行指令后变成<br><code>EAX == 0x6883 6896</code> 。</td>
+</tr>
+<tr>
+<td>XCHG</td>
+<td>交换字或字节</td>
+<td><code>xchg CH,AL</code><br><code>xchg BX,SI</code><br><code>xchg [SI],CX</code></td>
+<td>只能是两个寄存器，寄存器和内存变量之间内容的交换<br>不能同时都为内存操作数<br>任何一个操作数都不能为段寄存器<br>任何一个操作数不能为立即数<br>两个操作数的长度不能不相等</td>
+</tr>
+<tr>
+<td>CMPXCHG</td>
+<td>比较并交换操作数</td>
+<td><code>cmpxchg CX,DX</code></td>
+<td>这条指令将 <code>al/ax/eax/rax</code> 中的值与首操作数比较：<br>1. 如果相等，第 2 操作数的值装载到首操作数，<code>zf = 1</code> 。<br>2. 如果不等，首操作数的值装载到 <code>al\ax\eax\rax</code> ，并将 <code>zf</code> 清 0 。</td>
+</tr>
+<tr>
+<td>XADD</td>
+<td>先将两个数交换，再将二者之和传给第一个数</td>
+<td><code>xadd [ecx],eax</code></td>
+<td>先交换 <code>[ecx]</code> 与 <code>eax</code> 的值, 然后<code>[ecx]=[ecx]+eax</code></td>
+</tr>
+<tr>
+<td>XLAT</td>
+<td>字节查表转换</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="12">1.2 输入输出端口存送指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IN</td>
+<td>I/O端口输入</td>
+<td><code>in AX,0x21</code><br><code>mov DX,379H</code><br><code>in AL,DX</code></td>
+<td><code>in AX,0x21</code> 表示：<br>从端口地址 0x21 读取 1 字节数据到 AL<br>从端口地址 0x22 读取 1 字节到AH</td>
+</tr>
+<tr>
+<td>OUT</td>
+<td>I/O端口输出</td>
+<td><code>out 0x21,AX</code><br><code>mov DX,0x378</code><br><code>out DX,AX</code></td>
+<td><code>out 0x21,AX</code> 表示：<br>将 AX 的值写入端口地址 <code>0x21</code> 开始的连续两个字节。</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ul>
+<li>
+<p>输入输出端口由立即方式指定时， 其范围是 0-255; </p>
+</li>
+<li>
+<p>由寄存器 DX 指定时，其范围是 0-65535。</p>
+</li>
+</ul>
+<h2 id="13">1.3 目的地址传送指令。</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEA</td>
+<td>装入有效地址。</td>
+<td>LEA DX，string ;把偏移地址存到DX。</td>
+<td></td>
+</tr>
+<tr>
+<td>LDS</td>
+<td>传送目标指针，把指针内容装入DS。</td>
+<td>LDS SI，string ;把段地址:偏移地址存到DS:SI。</td>
+<td></td>
+</tr>
+<tr>
+<td>LES</td>
+<td>传送目标指针，把指针内容装入ES。</td>
+<td>LES DI，string ;把段地址:偏移地址存到ES:DI。</td>
+<td></td>
+</tr>
+<tr>
+<td>LFS</td>
+<td>传送目标指针，把指针内容装入FS。</td>
+<td>LFS DI，string ;把段地址:偏移地址存到FS:DI。</td>
+<td></td>
+</tr>
+<tr>
+<td>LGS</td>
+<td>传送目标指针，把指针内容装入GS。</td>
+<td>LGS DI，string ;把段地址:偏移地址存到GS:DI。</td>
+<td></td>
+</tr>
+<tr>
+<td>LSS</td>
+<td>传送目标指针，把指针内容装入SS。</td>
+<td>LSS DI，string ;把段地址:偏移地址存到SS:DI。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="14">1.4 标志传送指令。</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LAHF</td>
+<td>标志寄存器传送，把标志装入AH。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SAHF</td>
+<td>标志寄存器传送，把AH内容装入标志寄存器。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUSHF</td>
+<td>标志入栈。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POPF</td>
+<td>标志出栈。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PUSHD</td>
+<td>32位标志入栈。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>POPD</td>
+<td>32位标志出栈。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2">2 算术运算指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADD</td>
+<td>将两数相加和装入首操作数</td>
+<td><code>add bx,0x5</code></td>
+<td><code>add bx,0x5</code> 的作用是：<br><code>bx = bx + 5</code><br>允许以下五种形式：<br><code>add reg,reg</code><br><code>add reg,memory</code><br><code>add memory,reg</code><br><code>add reg,constant</code><br><code>add memory,constant</code></td>
+</tr>
+<tr>
+<td>ADC</td>
+<td>带进位加法</td>
+<td><code>mov ax,2</code><br><code>mov bx,1</code><br><code>sub bx,ax</code><br><code>adc ax,1</code></td>
+<td>示例的运算结果为 <code>ax == 4</code><br><code>adc ax,cx</code> 的作用是：<br>将两数相加再加低位进位，结果送入首操作数，即<br><code>ax = ax + cx + cf</code><br>受影响的标志位：<br>AF、CF、OF、PF、SF 和 ZF 。</td>
+</tr>
+<tr>
+<td>INC</td>
+<td>加 1</td>
+<td><code>inc ax</code><br><code>inc al</code><br><code>inc byte ptr [bx]</code></td>
+<td>INC 指令只有 1 个操作数，它将指定的操作数的内容加 1，再将结果送回到该操作数。<br>INC 指令将影响 SF，AF，ZF，PF，OF 标志位，但是不影响 CF 标志位。<br>INC 指令的操作数的类型可以是通用寄存器或存储单元，但不可以是段寄存器。<br>对于存储单元，需要用 <code>BYTE PTR</code> 或者 <code>WORD PTR</code> 说明是字节还是字操作</td>
+</tr>
+<tr>
+<td>AAA</td>
+<td>加法的ASCII码调整</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DAA</td>
+<td>加法的十进制调整</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>将两数相减差装入首操作数</td>
+<td><code>sub ax,bx</code></td>
+<td></td>
+</tr>
+<tr>
+<td>SBB</td>
+<td>带借位减法</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DEC</td>
+<td>减 1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NEG</td>
+<td>求反</td>
+<td><code>neg eax</code></td>
+<td>求补指令，对操作数执行求补运算：用 0 减去操作数，然后结果返回操作数。<br>求补运算也可以表达成：将操作数按位取反后加 1 。<br><code>(OPR) = - (OPR)</code> 或 <code>(OPR) = 0xFFFF - (OPR) + 1</code></td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>比较两个操作数的大小</td>
+<td><code>cmp eax,ecx</code></td>
+<td>如果比较的是两个无符号数：<pre><code>CMP 结果     ZF  CF</code><br><code>eax &lt; ecx    0   1</code><br><code>eax &gt; ecx    0   0</code><br><code>eax = ecx    1   0</code></pre>如果比较的是两个有符号数：<pre><code>CMP 结果     ZF  SF  OF</code><br><code>eax &lt; ecx    0   1   0</code><br><code>eax &lt; ecx    0   0   1</code><br><code>eax &gt; ecx    0   1   1</code><br><code>eax &gt; ecx    0   0   0</code><br><code>eax = ecx    1</code></pre></td>
+</tr>
+<tr>
+<td>AAS</td>
+<td>减法的ASCII码调整</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DAS</td>
+<td>减法的十进制调整</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MUL</td>
+<td>无符号乘法</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IMUL</td>
+<td>整数乘法。</td>
+<td></td>
+<td>以上两条，结果回送AH和AL(字节运算)，或DX和AX(字运算)，</td>
+</tr>
+<tr>
+<td>AAM</td>
+<td>乘法的ASCII码调整。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DIV</td>
+<td>无符号除法。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IDIV</td>
+<td>整数除法。</td>
+<td></td>
+<td>以上两条，结果回送:<br>商回送AL，余数回送AH， (字节运算);<br>或 商回送AX，余数回送DX， (字运算)。</td>
+</tr>
+<tr>
+<td>AAD</td>
+<td>除法的ASCII码调整。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CBW</td>
+<td>字节转换为字。 (把AL中字节的符号扩展到AH中去)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CWD</td>
+<td>字转换为双字。 (把AX中的字的符号扩展到DX中去)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CWDE</td>
+<td>字转换为双字。 (把AX中的字符号扩展到EAX中去)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CDQ</td>
+<td>双字扩展。 (把EAX中的字的符号扩展到EDX中去)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3">3 逻辑运算指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AND</td>
+<td>与运算。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OR</td>
+<td>或运算。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>XOR</td>
+<td>异或运算。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NOT</td>
+<td>取反。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>TEST</td>
+<td>测试。(两操作数作与运算，仅修改标志位，不回送结果)。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SHL</td>
+<td>逻辑左移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SAL</td>
+<td>算术左移。(=SHL)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SHR</td>
+<td>逻辑右移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SAR</td>
+<td>算术右移。(=SHR)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ROL</td>
+<td>循环左移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ROR</td>
+<td>循环右移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RCL</td>
+<td>通过进位的循环左移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>RCR</td>
+<td>通过进位的循环右移。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>以上八种移位指令，其移位次数可达255次。
+移位一次时， 可直接用操作码。 如 SHL AX，1。
+移位&gt;1次时， 则由寄存器CL给出移位次数。
+如 MOV CL，04
+SHL AX，CL</p>
+<h2 id="4">4 串指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DS:SI</td>
+<td>源串段寄存器 :源串变址。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ES:DI</td>
+<td>目标串段寄存器:目标串变址。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CX</td>
+<td>重复次数计数器。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AL/AX</td>
+<td>扫描值。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>D标志 0表示重复操作中SI和DI应自动增量; 1表示应自动减量。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Z标志 用来控制扫描或比较操作的结束。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MOVS 串传送。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>( MOVSB 传送字符。 MOVSW 传送字。 MOVSD 传送双字。 )</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CMPS 串比较。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>( CMPSB 比较字符。 CMPSW 比较字。 )</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SCAS 串扫描。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>把AL或AX的内容与目标串作比较，比较结果反映在标志位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LODS 装入串。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>把源串中的元素(字或字节)逐一装入AL或AX中。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>( LODSB 传送字符。 LODSW 传送字。 LODSD 传送双字。 )</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STOS 保存串。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>是LODS的逆过程。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>REP 当CX/ECX&lt;&gt;0时重复。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>REPE/REPZ 当ZF=1或比较结果相等，且CX/ECX&lt;&gt;0时重复。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>REPNE/REPNZ 当ZF=0或比较结果不相等，且CX/ECX&lt;&gt;0时重复。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>REPC 当CF=1且CX/ECX&lt;&gt;0时重复。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>REPNC 当CF=0且CX/ECX&lt;&gt;0时重复。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="5">5 程序转移指令</h2>
+<p>无条件转移指令 (长转移)</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JMP</td>
+<td>无条件转移指令</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CALL</td>
+<td>过程调用</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>RET/RETF过程返回。</p>
+<p>条件转移指令 (短转移，-128到+127的距离内)
+( 当且仅当(SF XOR OF)=1时，OP1 </p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JA/JNBE</td>
+<td>不小于或不等于时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JAE/JNB</td>
+<td>大于或等于转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JB/JNAE</td>
+<td>小于转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JBE/JNA</td>
+<td>小于或等于转移。</td>
+<td></td>
+<td>以上四条，测试无符号整数运算的结果(标志C和Z)。</td>
+</tr>
+<tr>
+<td>JG/JNLE</td>
+<td>大于转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JGE/JNL</td>
+<td>大于或等于转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JL/JNGE</td>
+<td>小于转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JLE/JNG</td>
+<td>小于或等于转移。</td>
+<td></td>
+<td>以上四条，测试带符号整数运算的结果(标志S，O和Z)。</td>
+</tr>
+<tr>
+<td>JE/JZ</td>
+<td>等于转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JNE/JNZ</td>
+<td>不等于时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JC</td>
+<td>有进位时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JNC</td>
+<td>无进位时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JNO</td>
+<td>不溢出时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JNP/JPO</td>
+<td>奇偶性为奇数时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JNS</td>
+<td>符号位为 "0" 时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JO</td>
+<td>溢出转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JP/JPE</td>
+<td>奇偶性为偶数时转移。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JS</td>
+<td>符号位为 "1" 时转移。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>3&gt;循环控制指令(短转移)</p>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LOOP CX不为零时循环。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LOOPE/LOOPZ CX不为零且标志Z=1时循环。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LOOPNE/LOOPNZ CX不为零且标志Z=0时循环。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JCXZ CX为零时转移。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>JECXZ ECX为零时转移。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4&gt;中断指令</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INT 中断指令</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INTO 溢出中断</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IRET 中断返回</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5&gt;处理器控制指令</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>HLT 处理器暂停， 直到出现中断或复位信号才继续。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>WAIT 当芯片引线TEST为高电平时使CPU进入等待状态。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ESC 转换到外处理器。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LOCK 封锁总线。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NOP 空操作。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STC 置进位标志位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CLC 清进位标志位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CMC 进位标志取反。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STD 置方向标志位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CLD 清方向标志位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STI 置中断允许位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CLI 清中断允许位。</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6 伪指令</h2>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DW</td>
+<td>定义字(2字节)。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PROC</td>
+<td>定义过程。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ENDP</td>
+<td>过程结束。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SEGMENT</td>
+<td>定义段。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ASSUME</td>
+<td>建立段寄存器寻址。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ENDS</td>
+<td>段结束。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>END</td>
+<td>程序结束。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 寄存器" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              寄存器
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
