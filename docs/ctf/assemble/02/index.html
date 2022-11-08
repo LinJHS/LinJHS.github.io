@@ -184,7 +184,7 @@
   
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        Welcome to LinJHS's Website
+        Welcome to LinJHS's Docs
       </a>
     </li>
   
@@ -369,6 +369,34 @@
     <li class="md-nav__item">
       <a href="../../../acm/02_Tree/02_RMQ/" class="md-nav__link">
         RMQ 问题（区间最值问题）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/03_BinaryIndexedTree/" class="md-nav__link">
+        树状数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/04_SegmentTree/" class="md-nav__link">
+        线段树
       </a>
     </li>
   
@@ -745,11 +773,52 @@
     5 程序转移指令
   </a>
   
+    <nav class="md-nav" aria-label="5 程序转移指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 无条件转移指令 (长转移)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-128-127" class="md-nav__link">
+    5.2 条件转移指令（短转移，-128 到 +127 的距离内）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3 循环控制指令(短转移)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 中断指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    5.5 处理器控制指令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    6 伪指令
+  <a href="#56" class="md-nav__link">
+    5.6 伪指令
   </a>
   
 </li>
@@ -758,6 +827,67 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/" class="md-nav__link">
+        汇编详解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Wp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Wp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Wp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wp/2022-10_TSCTF-J/" class="md-nav__link">
+        TSCTF-J WP
+      </a>
     </li>
   
 
@@ -856,11 +986,52 @@
     5 程序转移指令
   </a>
   
+    <nav class="md-nav" aria-label="5 程序转移指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 无条件转移指令 (长转移)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-128-127" class="md-nav__link">
+    5.2 条件转移指令（短转移，-128 到 +127 的距离内）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    5.3 循环控制指令(短转移)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    5.4 中断指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55" class="md-nav__link">
+    5.5 处理器控制指令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    6 伪指令
+  <a href="#56" class="md-nav__link">
+    5.6 伪指令
   </a>
   
 </li>
@@ -1195,62 +1366,62 @@
 <tr>
 <td>MUL</td>
 <td>无符号乘法</td>
-<td></td>
-<td></td>
+<td><code>mov ax,0x2</code><br><code>mov bx,0x3</code><br><code>mul bx</code></td>
+<td><code>mul reg/memory</code> 的作用是：<br>将 <code>al</code> / <code>ax</code> / <code>eax</code> 与 <code>reg/memory</code> 相乘，并将答案回送到 <code>ax</code> / <code>dx:ax</code> / <code>edx:eax</code></td>
 </tr>
 <tr>
 <td>IMUL</td>
-<td>整数乘法。</td>
-<td></td>
-<td>以上两条，结果回送AH和AL(字节运算)，或DX和AX(字运算)，</td>
+<td>整数乘法</td>
+<td>与 <code>mul</code> 类似</td>
+<td><code>imul</code> 会保留乘积的符号</td>
 </tr>
 <tr>
 <td>AAM</td>
-<td>乘法的ASCII码调整。</td>
+<td>乘法的ASCII码调整</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>DIV</td>
-<td>无符号除法。</td>
-<td></td>
-<td></td>
+<td>无符号除法</td>
+<td><code>mov dx,0x1</code><br><code>mov ax,0x86a1</code><br><code>mov bx,0x100</code><br><code>div bx</code></td>
+<td><code>div reg/memory</code> 的作用是：<br>将 <code>ax</code> / <code>dx:ax</code> / <code>edx:eax</code> 与 <code>reg/memory</code> 相乘，并将商回送到 <code>al</code> / <code>ax</code> / <code>eax</code> ，将余数回送到 <code>ah</code> / <code>dx</code> / <code>edx</code></td>
 </tr>
 <tr>
 <td>IDIV</td>
-<td>整数除法。</td>
-<td></td>
-<td>以上两条，结果回送:<br>商回送AL，余数回送AH， (字节运算);<br>或 商回送AX，余数回送DX， (字运算)。</td>
+<td>整数除法</td>
+<td>与 <code>idiv</code> 类似</td>
+<td><code>idiv</code> 为有符号的除法</td>
 </tr>
 <tr>
 <td>AAD</td>
-<td>除法的ASCII码调整。</td>
+<td>除法的 ASCII 码调整</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>CBW</td>
-<td>字节转换为字。 (把AL中字节的符号扩展到AH中去)</td>
-<td></td>
-<td></td>
+<td>字节转换为字</td>
+<td><code>cwb</code></td>
+<td>把 AL 中字节的符号扩展到 AH 中去：<br>如果 AL 的最高有效位是 <code>0</code> ，则 <code>AH = 0x00</code> ；<br>如果 AL 的最高有效位为 <code>1</code> ，则 <code>AH = 0xff</code>。<br>AL 不变。（也就是将 AL 的符号位移至 AH ）</td>
 </tr>
 <tr>
 <td>CWD</td>
-<td>字转换为双字。 (把AX中的字的符号扩展到DX中去)</td>
-<td></td>
-<td></td>
+<td>字转换为双字</td>
+<td><code>cwd</code></td>
+<td>把 AX 中的字的符号扩展到 DX 中去</td>
 </tr>
 <tr>
 <td>CWDE</td>
-<td>字转换为双字。 (把AX中的字符号扩展到EAX中去)</td>
-<td></td>
-<td></td>
+<td>字转换为双字</td>
+<td><code>cwde</code></td>
+<td>把 AX 中的字符号扩展到 EAX 中去</td>
 </tr>
 <tr>
 <td>CDQ</td>
-<td>双字扩展。 (把EAX中的字的符号扩展到EDX中去)</td>
-<td></td>
-<td></td>
+<td>双字扩展</td>
+<td><code>cdq</code></td>
+<td>把 EAX 中的字的符号扩展到 EDX 中去</td>
 </tr>
 </tbody>
 </table>
@@ -1267,33 +1438,33 @@
 <tbody>
 <tr>
 <td>AND</td>
-<td>与运算。</td>
-<td></td>
-<td></td>
+<td>与运算</td>
+<td><code>mov eax,0x0000ffff</code><br><code>and eax,0x0000000f</code></td>
+<td>用法：<br><code>and reg,imm/reg/mem</code><br><code>and mem,imm/reg</code><br>该指令会置 <code>CF = OF = 0</code> ，其结果影响 <code>SF</code>, <code>ZF</code>, <code>PF</code> ，而对于 <code>AF</code> 无定义 。</td>
 </tr>
 <tr>
 <td>OR</td>
-<td>或运算。</td>
-<td></td>
-<td></td>
+<td>或运算</td>
+<td>与 <code>and</code> 类似</td>
+<td>与 <code>and</code> 类似</td>
 </tr>
 <tr>
 <td>XOR</td>
-<td>异或运算。</td>
-<td></td>
-<td></td>
+<td>异或运算</td>
+<td>与 <code>and</code> 类似</td>
+<td>与 <code>and</code> 类似</td>
 </tr>
 <tr>
 <td>NOT</td>
-<td>取反。</td>
-<td></td>
-<td></td>
+<td>取反</td>
+<td><code>not reg/mem</code></td>
+<td>反转操作数的所有位。<br>不影响标志位。</td>
 </tr>
 <tr>
 <td>TEST</td>
-<td>测试。(两操作数作与运算，仅修改标志位，不回送结果)。</td>
-<td></td>
-<td></td>
+<td>测试</td>
+<td><code>test ax,bx</code></td>
+<td>两操作数作与运算，仅修改标志位，不回送结果<br>具体操作流程如下：<br>将两个操作数进行按位 AND ，设结果是 TEMP 。<br>将结果的最高位赋给 SF 标志位。比如结果最高位是 1 ，SF 就为 1 。<br>如果 <code>TEMP == 0</code> ，<code>ZF = 1</code> ，如果 <code>TEMP != 0</code> ，<code>ZF = 0</code>。<br><code>PF</code> = 将 TEMP 的低 8 位，从第 0 位开始，逐位取同或。也就是第 0 位与第 1 位的同或结果，去和第 2 位同或，结果再去和第 3 位同或……直到和第 7 位同或。<br>CF 位置 0 ，OF 位置 0 ，AF 位是未定的，鬼知道是什么</td>
 </tr>
 <tr>
 <td>SHL</td>
@@ -1385,118 +1556,29 @@ SHL AX，CL</p>
 <td></td>
 <td></td>
 </tr>
-<tr>
-<td>D标志 0表示重复操作中SI和DI应自动增量; 1表示应自动减量。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Z标志 用来控制扫描或比较操作的结束。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>MOVS 串传送。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>( MOVSB 传送字符。 MOVSW 传送字。 MOVSD 传送双字。 )</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CMPS 串比较。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>( CMPSB 比较字符。 CMPSW 比较字。 )</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>SCAS 串扫描。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>把AL或AX的内容与目标串作比较，比较结果反映在标志位。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>LODS 装入串。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>把源串中的元素(字或字节)逐一装入AL或AX中。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>( LODSB 传送字符。 LODSW 传送字。 LODSD 传送双字。 )</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>STOS 保存串。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>是LODS的逆过程。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>REP 当CX/ECX&lt;&gt;0时重复。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>REPE/REPZ 当ZF=1或比较结果相等，且CX/ECX&lt;&gt;0时重复。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>REPNE/REPNZ 当ZF=0或比较结果不相等，且CX/ECX&lt;&gt;0时重复。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>REPC 当CF=1且CX/ECX&lt;&gt;0时重复。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>REPNC 当CF=0且CX/ECX&lt;&gt;0时重复。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<p>（以下部分看不懂还没整理）
+D标志 0表示重复操作中SI和DI应自动增量; 1表示应自动减量。
+Z标志 用来控制扫描或比较操作的结束。
+MOVS 串传送。
+( MOVSB 传送字符。 MOVSW 传送字。 MOVSD 传送双字。 )
+CMPS 串比较。
+( CMPSB 比较字符。 CMPSW 比较字。 )
+SCAS 串扫描。
+把AL或AX的内容与目标串作比较，比较结果反映在标志位。
+LODS 装入串。
+把源串中的元素(字或字节)逐一装入AL或AX中。
+( LODSB 传送字符。 LODSW 传送字。 LODSD 传送双字。 )
+STOS 保存串。
+是LODS的逆过程。
+REP 当CX/ECX&lt;&gt;0时重复。
+REPE/REPZ 当ZF=1或比较结果相等，且CX/ECX&lt;&gt;0时重复。
+REPNE/REPNZ 当ZF=0或比较结果不相等，且CX/ECX&lt;&gt;0时重复。
+REPC 当CF=1且CX/ECX&lt;&gt;0时重复。
+REPNC 当CF=0且CX/ECX&lt;&gt;0时重复。</p>
 <h2 id="5">5 程序转移指令</h2>
-<p>无条件转移指令 (长转移)</p>
+<h3 id="51">5.1 无条件转移指令 (长转移)</h3>
 <table>
 <thead>
 <tr>
@@ -1522,8 +1604,8 @@ SHL AX，CL</p>
 </tbody>
 </table>
 <p>RET/RETF过程返回。</p>
-<p>条件转移指令 (短转移，-128到+127的距离内)
-( 当且仅当(SF XOR OF)=1时，OP1 </p>
+<h3 id="52-128-127">5.2 条件转移指令（短转移，-128 到 +127 的距离内）</h3>
+<p>（当且仅当 <code>(SF XOR OF)=1</code> 时，OP1） </p>
 <table>
 <thead>
 <tr>
@@ -1644,7 +1726,7 @@ SHL AX，CL</p>
 </tr>
 </tbody>
 </table>
-<p>3&gt;循环控制指令(短转移)</p>
+<h3 id="53">5.3 循环控制指令(短转移)</h3>
 <table>
 <thead>
 <tr>
@@ -1656,140 +1738,154 @@ SHL AX，CL</p>
 </thead>
 <tbody>
 <tr>
-<td>LOOP CX不为零时循环。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>LOOPE/LOOPZ CX不为零且标志Z=1时循环。</td>
-<td></td>
+<td>LOOP</td>
+<td>CX不为零时循环。</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>LOOPNE/LOOPNZ CX不为零且标志Z=0时循环。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>JCXZ CX为零时转移。</td>
-<td></td>
+<td>LOOPE/LOOPZ</td>
+<td>CX不为零且标志Z=1时循环。</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>JECXZ ECX为零时转移。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>4&gt;中断指令</td>
-<td></td>
+<td>LOOPNE/LOOPNZ</td>
+<td>CX不为零且标志Z=0时循环。</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>INT 中断指令</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>INTO 溢出中断</td>
-<td></td>
+<td>JCXZ</td>
+<td>CX为零时转移。</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>IRET 中断返回</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>5&gt;处理器控制指令</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>HLT 处理器暂停， 直到出现中断或复位信号才继续。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>WAIT 当芯片引线TEST为高电平时使CPU进入等待状态。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ESC 转换到外处理器。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>LOCK 封锁总线。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>NOP 空操作。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>STC 置进位标志位。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CLC 清进位标志位。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CMC 进位标志取反。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>STD 置方向标志位。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CLD 清方向标志位。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>STI 置中断允许位。</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>CLI 清中断允许位。</td>
-<td></td>
+<td>JECXZ</td>
+<td>ECX为零时转移。</td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="6">6 伪指令</h2>
+<h3 id="54">5.4 中断指令</h3>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INT</td>
+<td>中断指令</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>INTO</td>
+<td>溢出中断</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IRET</td>
+<td>中断返回</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="55">5.5 处理器控制指令</h3>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+<th>用法示例</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HLT</td>
+<td>处理器暂停， 直到出现中断或复位信号才继续。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>WAIT</td>
+<td>当芯片引线TEST为高电平时使CPU进入等待状态。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ESC</td>
+<td>转换到外处理器。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LOCK</td>
+<td>封锁总线。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NOP</td>
+<td>空操作。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STC</td>
+<td>置进位标志位。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CLC</td>
+<td>清进位标志位。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CMC</td>
+<td>进位标志取反。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STD</td>
+<td>置方向标志位。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CLD</td>
+<td>清方向标志位。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>STI</td>
+<td>置中断允许位。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>CLI</td>
+<td>清中断允许位。</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="56">5.6 伪指令</h2>
 <table>
 <thead>
 <tr>
@@ -1878,6 +1974,21 @@ SHL AX，CL</p>
           </div>
         </a>
       
+      
+        
+        <a href="../03/" class="md-footer__link md-footer__link--next" aria-label="Next: 汇编详解" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              汇编详解
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

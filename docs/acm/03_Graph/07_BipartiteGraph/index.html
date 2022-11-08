@@ -184,7 +184,7 @@
   
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        Welcome to LinJHS's Website
+        Welcome to LinJHS's Docs
       </a>
     </li>
   
@@ -377,6 +377,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Tree/03_BinaryIndexedTree/" class="md-nav__link">
+        树状数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_Tree/04_SegmentTree/" class="md-nav__link">
+        线段树
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -556,6 +584,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    匈牙利算法
+  </a>
+  
+    <nav class="md-nav" aria-label="匈牙利算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    前置知识
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    算法轮廓
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    复杂度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    示例代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -721,6 +790,67 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf/assemble/03/" class="md-nav__link">
+        汇编详解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Wp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Wp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Wp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ctf/wp/2022-10_TSCTF-J/" class="md-nav__link">
+        TSCTF-J WP
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -781,6 +911,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    匈牙利算法
+  </a>
+  
+    <nav class="md-nav" aria-label="匈牙利算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    前置知识
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    算法轮廓
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    复杂度
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    示例代码
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -801,13 +972,113 @@
 <p>无向图 <span class="arithmatex">\(G\)</span> 为二分图的充分必要条件是，<span class="arithmatex">\(G\)</span> 至少有两个顶点，且其所有回路的长度均为偶数。</p>
 <h2 id="_3">二分图</h2>
 <p>判断二分图的常见方法是染色法：</p>
-<p>开始对任意一未染色的顶点染色，之后判断其相邻的顶点中：若未染色则将其染上和相邻顶点不同的颜色，若已经染色且颜色和相邻顶点的颜色相同则说明不是二分图，否则继续判断，可以使用 BFS 或 DFS ！</p>
+<p>开始对任意一未染色的顶点染色，之后判断其相邻的顶点中：</p>
+<ul>
+<li>若未染色则将其染上和相邻顶点不同的颜色，</li>
+<li>若已经染色且颜色和相邻顶点的颜色相同则说明不是二分图，否则继续判断，可以使用 BFS 或 DFS 。</li>
+</ul>
 <p>易知：任何无回路的的图均是二分图。</p>
 <h2 id="_4">二分图最大匹配</h2>
 <p>求二分图最大匹配可以用最大流或者匈牙利算法。</p>
-<p>给定一个二分图 <span class="arithmatex">\(G\)</span> ，在 <span class="arithmatex">\(G\)</span> 的一个子图 <span class="arithmatex">\(M\)</span> 中，<span class="arithmatex">\(M\)</span> 的边集中的任意两条边都不依附于同一个顶点，则称 <span class="arithmatex">\(M\)</span> 是一个匹配。</p>
+<p>给定一个二分图 <span class="arithmatex">\(G\)</span> ，在 <span class="arithmatex">\(G\)</span> 的一个子图 <span class="arithmatex">\(M\)</span> 中，<span class="arithmatex">\(M\)</span> 的边集中的<strong>任意两条边都不依附于同一个顶点</strong>，则称 <span class="arithmatex">\(M\)</span> 是一个匹配。</p>
 <p>选择这样的边数最大的子集称为图的最大匹配问题 (maximal matching problem) 。</p>
 <p>如果一个匹配中，图中的每个顶点都和图中某条边相关联，则称此匹配为完全匹配，也称作完备匹配。</p>
+<h2 id="_5">匈牙利算法</h2>
+<p><img alt="二分图例图" src="../07_BipartiteGraph_pic.png" /></p>
+<h3 id="_6">前置知识</h3>
+<p>下面 <span class="arithmatex">\(M\)</span> 是 <span class="arithmatex">\(G\)</span> 的一个匹配。</p>
+<ul>
+<li><span class="arithmatex">\(M\)</span>-交错路：<span class="arithmatex">\(p\)</span> 是 <span class="arithmatex">\(G\)</span> 的一条通路，如果 <span class="arithmatex">\(p\)</span> 中的边为属于 <span class="arithmatex">\(M\)</span> 中的边与不属于 <span class="arithmatex">\(M\)</span> 但属于 <span class="arithmatex">\(G\)</span> 中的边交替出现，则称 <span class="arithmatex">\(p\)</span> 是一条 <span class="arithmatex">\(M\)</span>-交错路。如：路径 <span class="arithmatex">\((X_3,Y_2,X_1,Y_4)\)</span> ，<span class="arithmatex">\((Y_1,X_2,Y_3)\)</span> 。</li>
+<li><span class="arithmatex">\(M\)</span>-饱和点：对于 <span class="arithmatex">\(v\in V\)</span> ，如果 <span class="arithmatex">\(v\)</span> 与 <span class="arithmatex">\(M\)</span> 中的某条边关联，则称 <span class="arithmatex">\(v\)</span> 是 <span class="arithmatex">\(M\)</span>-饱和点，否则称 <span class="arithmatex">\(v\)</span> 是非 <span class="arithmatex">\(M\)</span>-饱和点。如 <span class="arithmatex">\(X_1,X_2,Y_1,Y_2\)</span> 都属于M-饱和点，而其它点都属于非 <span class="arithmatex">\(M\)</span>-饱和点。</li>
+<li><span class="arithmatex">\(M\)</span>-可增广路：<span class="arithmatex">\(p\)</span> 是一条 <span class="arithmatex">\(M\)</span>-交错路，如果 <span class="arithmatex">\(p\)</span> 的起点和终点都是非 <span class="arithmatex">\(M\)</span>-饱和点，则称 <span class="arithmatex">\(p\)</span> 为 <span class="arithmatex">\(M\)</span>-可增广路。如：<span class="arithmatex">\((X_3,Y_2,X_1,Y_4)\)</span>（注：不同于网络流的增广路）。</li>
+</ul>
+<p>增广路的定义（也称增广轨或交错轨）：</p>
+<p>若 <span class="arithmatex">\(P\)</span> 是图 <span class="arithmatex">\(G\)</span> 中一条连通两个未匹配顶点的路径，并且属于 <span class="arithmatex">\(M\)</span> 的边和不属于 <span class="arithmatex">\(M\)</span> 的边（即已匹配和待匹配的边）在 <span class="arithmatex">\(P\)</span> 上交替出现，则称 <span class="arithmatex">\(P\)</span> 为相对于 <span class="arithmatex">\(M\)</span> 的一条增广路径。</p>
+<p>由增广路的定义可以推出下述三个结论：
+1. <span class="arithmatex">\(P\)</span> 的路径个数必定为奇数，第一条边和最后一条边都不属于 <span class="arithmatex">\(M\)</span> 。
+2. 将 <span class="arithmatex">\(M\)</span> 和 <span class="arithmatex">\(P\)</span> 进行取反操作可以得到一个更大的匹配 <span class="arithmatex">\(M'\)</span> 。
+3. <span class="arithmatex">\(M\)</span> 为 <span class="arithmatex">\(G\)</span> 的最大匹配当且仅当不存在M的增广路径。</p>
+<h3 id="_7">算法轮廓</h3>
+<ol>
+<li>置 <span class="arithmatex">\(M\)</span> 为空；</li>
+<li>找出一条增广路径 <span class="arithmatex">\(P\)</span> ，通过异或操作获得更大的匹配 <span class="arithmatex">\(M'\)</span> 代替 <span class="arithmatex">\(M\)</span> ；</li>
+<li>重复操作 2 直到找不出增广路径为止。</li>
+</ol>
+<h3 id="_8">复杂度</h3>
+<p>时间复杂度：</p>
+<ul>
+<li>最坏 <code>O(n^3)</code> </li>
+<li>邻接表 <code>O(nm)</code> </li>
+</ul>
+<p>空间复杂度：</p>
+<ul>
+<li>邻接矩阵 <code>O(n^2)</code></li>
+<li>邻接矩阵 <code>O(n+m)</code></li>
+</ul>
+<h3 id="_9">示例代码</h3>
+<pre><code class="language-cpp">/*
+版权声明：以下代码为CSDN博主「LinHunYoR」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_38956769/article/details/80238896
+*/
+/************匈牙利算法**************/
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;cstring&gt;
+using namespace std;
+#define MAX_N 512
+vector&lt;int&gt;Adj[MAX_N];
+int n,m,ans;
+void AddEdge(int u,int v){
+    Adj[u].push_back(v);
+    Adj[v].push_back(u);
+}
+/**********读入数据，建图*************/
+void Init(){
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=1;i&lt;=n;i++){
+        int si,k;
+        scanf(&quot;%d&quot;,&amp;si);
+        for(int j=1;j&lt;=si;j++){
+            scanf(&quot;%d&quot;,&amp;k);
+            k+=n;
+            AddEdge(i,k);
+        }
+    }
+}
+/************深搜找增广路************/
+bool Vis[MAX_N+1];
+int Match[MAX_N+1];
+bool Dfs(int u){
+    for(int i=0;i&lt;Adj[u].size();i++){
+        int v=Adj[u][i];//深搜下一个节点
+        if(Vis[v])//如果已经访问过那就不访问了
+            continue;
+        Vis[v]=true;//标记访问过
+        if(!Match[v]||Dfs(Match[v]))//查找增广路
+        {//如果v未匹配或者可以更新原来的增广路
+            Match[v]=u;
+            Match[u]=v;
+            return true;
+        }
+    }
+    return false;
+}
+/*********匈牙利算法主函数**********/
+void Solve(){
+    for(int i=1;i&lt;=n;i++){
+        memset(Vis,false,sizeof Vis);
+        if(!Match[i])
+            if(Dfs(i))
+                ans++;
+    }
+}
+int main(){
+    Init();
+    Solve();
+    printf(&quot;%d\n&quot;,ans);
+    return 0;
+}
+</code></pre>
 <hr />
 <p><em>注：部分资料来源于百度百科</em></p>
 <hr />
