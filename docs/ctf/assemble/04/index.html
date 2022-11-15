@@ -13,7 +13,7 @@
     
     
       
-        <title>TSCTF-J WP - LinJHS's Docs</title>
+        <title>04 - LinJHS's Docs</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tsctf-j-wp" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TSCTF-J WP
+              04
             
           </span>
         </div>
@@ -642,12 +642,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
       
       
       
@@ -670,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assemble/01/" class="md-nav__link">
+      <a href="../01/" class="md-nav__link">
         寄存器
       </a>
     </li>
@@ -684,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assemble/02/" class="md-nav__link">
+      <a href="../02/" class="md-nav__link">
         汇编常用指令
       </a>
     </li>
@@ -698,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assemble/03/" class="md-nav__link">
+      <a href="../03/" class="md-nav__link">
         汇编详解
       </a>
     </li>
@@ -710,11 +712,107 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../assemble/04/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          04
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         04
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    概述
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    栈 Stack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-mapping-segment" class="md-nav__link">
+    内存映射段 Memory Mapping Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap" class="md-nav__link">
+    堆 Heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bss-bss-segment" class="md-nav__link">
+    BSS 段 BSS Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-segment" class="md-nav__link">
+    数据段 Data Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-segmentelf" class="md-nav__link">
+    代码段 Text Segment（ELF）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bss" class="md-nav__link">
+    关于 BSS 段和数据段
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -731,14 +829,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
       
       
       
@@ -759,101 +855,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          TSCTF-J WP
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../wp/2022-10_TSCTF-J/" class="md-nav__link">
         TSCTF-J WP
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-baby_xor" class="md-nav__link">
-    Reverse - baby_xor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-byte_code" class="md-nav__link">
-    Reverse - byte_code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-" class="md-nav__link">
-    Web - 词超人
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-_1" class="md-nav__link">
-    Web - 真真历险记
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pwn-checkin" class="md-nav__link">
-    Pwn - checkin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-" class="md-nav__link">
-    Misc - 北邮人之声
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-just_play" class="md-nav__link">
-    Misc - Just_Play
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-black-tea" class="md-nav__link">
-    Misc - Black Tea
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -899,57 +905,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reverse-baby_xor" class="md-nav__link">
-    Reverse - baby_xor
+  <a href="#_2" class="md-nav__link">
+    概述
   </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    栈 Stack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-mapping-segment" class="md-nav__link">
+    内存映射段 Memory Mapping Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heap" class="md-nav__link">
+    堆 Heap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bss-bss-segment" class="md-nav__link">
+    BSS 段 BSS Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-segment" class="md-nav__link">
+    数据段 Data Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-segmentelf" class="md-nav__link">
+    代码段 Text Segment（ELF）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reverse-byte_code" class="md-nav__link">
-    Reverse - byte_code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-" class="md-nav__link">
-    Web - 词超人
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-_1" class="md-nav__link">
-    Web - 真真历险记
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pwn-checkin" class="md-nav__link">
-    Pwn - checkin
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-" class="md-nav__link">
-    Misc - 北邮人之声
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-just_play" class="md-nav__link">
-    Misc - Just_Play
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#misc-black-tea" class="md-nav__link">
-    Misc - Black Tea
+  <a href="#bss" class="md-nav__link">
+    关于 BSS 段和数据段
   </a>
   
 </li>
@@ -968,205 +980,65 @@
                 
 
 
-<h1 id="tsctf-j-wp">TSCTF-J WP</h1>
-<h2 id="reverse-baby_xor">Reverse - baby_xor</h2>
-<p>直接丢 IDA ，写个程序运行一下</p>
-<pre><code class="language-py">a=[18,20,7,17,4,110,10,58,25,124,32,14,122,6,123,22,100,8,6,48,4,22,34,117,27,0,36,18,40,4,105,42,57,67,43,85,13,60,5,83,19]
-
-ans=str()
-
-for i in range(0,41):
-    ans+=chr(a[i]^0x46^i)
-
-print(ans)
-</code></pre>
-<h2 id="reverse-byte_code">Reverse - byte_code</h2>
-<p>这题是真的离谱，虽然很容易识别出来这个是 python 字节码，但是我是手动看着代码复原的，贼麻烦（有部分输出进行了修改）。</p>
-<p>这个比汇编看起来简单太多了，复原难度不大，就提几个重点：</p>
-<pre><code>LOAD_NAME                6 (c)
-LOAD_NAME                8 (i)
-BINARY_SUBSCR
-</code></pre>
-<p>比如以上这一段就是把 <code>c[i]</code> 压入栈中</p>
-<pre><code>LOAD_NAME                9 (print)
-LOAD_NAME               10 (chr)
-LOAD_NAME                6 (c)
-LOAD_NAME                8 (i)
-BINARY_SUBSCR
-CALL_FUNCTION            1
-</code></pre>
-<p>上面这个就是 执行 <code>print(chr(c[i]))</code></p>
-<p>完整代码在下面：</p>
-<pre><code class="language-py">a=[114,101,118,101,114,115,101,95,116,104,101,95,98,121,116,101]
-
-b=[99,111,100,101,95,116,111,95,103,101,116,95,102,108,97,103]
-
-e=[80,115,193,24,226,237,202,212,126,46,205,208,215,135,228,199,63,159,117,52,254,247,0,133,163,248,47,115,109,248,236,68]
-
-pos=[9,6,15,10,1,0,11,7,4,12,5,3,8,2,14,13]
-
-d=[335833164,1155265242,627920619,1951749419,1931742276,856821608,489891514,366025591,1256805508,1106091325,128288025,234430359,314915121,249627427,207058976,1573143998,1443233295,245654538,1628003955,220633541,1412601456,1029130440,1556565611,1644777223,853364248,58316711,734735924,1745226113,1441619500,1426836945,500084794,1534413607]
-
-c=a+b
-
-s=str()
-
-for i in range(32):
-    s+=chr(c[i])
-
-print(s)
-
-for i in range(16):
-    a[i]=(a[i]+d[i])^b[pos[i]]
-
-for i in range(16):
-    b[i]=b[i]^a[pos[i]]
-
-c=a+b
-
-s=str()
-
-for i in range(32):
-    c[i]=(c[i]*d[i]%256)
-    c[i]=c[i]^e[i]
-    s+=chr(c[i])
-    print(c[i])
-
-print(s)
-</code></pre>
-<h2 id="web-">Web - 词超人</h2>
-<p>由于我个人 python 使用并不是很熟练，这道题我是分了以下几步进行：</p>
-<p>首先先获取 id 和 单词</p>
-<p>（本人菜鸡代码写的很丑很乱，大佬轻喷）</p>
-<pre><code class="language-py">import requests
-import json
-
-response = requests.get(url=&quot;http://49.232.201.163:46128/&quot;,headers={&quot;Connection&quot;: &quot;close&quot;})
-
-recv = response.text
-
-temp=recv
-
-#for i in range(1,1024):
-#    temp=temp.split(&quot;&lt;p class=\&quot;en\&quot; style=\&quot;visibility:hidden;display: inline\&quot;&gt;&quot;, 1)[1]
-#    print(temp.split(&quot;&lt;/p&gt;&quot;, 1)[0])
-#    temp=temp.split(&quot;&lt;/p&gt;&quot;, 1)[1]
-
-temp=recv
-
-for i in range(1,1024):
-    temp=temp.split(&quot;&lt;div id=\&quot;&quot;, 1)[1]
-    print(temp.split(&quot;\&quot;&quot;, 1)[0])
-    temp=temp.split(&quot;\&quot;&quot;, 1)[1]
-
-# print(response.text)
-</code></pre>
-<p>接着我是用 C++ 进行拼接的：</p>
-<pre><code class="language-cpp">//[{&quot;id&quot;:&quot;11&quot;,&quot;answer&quot;:&quot;&quot;},
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-
+<h1 id="_1"></h1>
+<p>内存管理是操作系统的核心，本文将从 Windows 和 Linux 系统下的程序在内存中的布局方式展开。</p>
+<h2 id="_2">概述</h2>
+<p>多任务操作系统中的每个进程都在其自己的内存沙箱中运行。此沙箱是一块<strong>虚拟地址空间</strong>，在 32 位模式下始终是 4GB 内存地址块，而在 64 位模式下，虚拟地址空间的理论大小为 <span class="arithmatex">\(2^{64}\)</span> 字节。</p>
+<p>这些<strong>虚拟地址</strong>通过<strong>页表</strong>（page tables）映射到<strong>物理内存</strong>，页表由操作系统内核维护并由处理器查询。每个进程都有自己的一组页表，但必须为内核保留一部分虚拟地址空间：</p>
+<p>在 <strong>Windows</strong> 情况下，默认将高地址的 <strong>2GB</strong> 空间分配给内核（当然也可以分配 1GB），而在 <strong>Linux</strong> 情况下，默认将高地址的 <strong>1GB</strong> 空间分配给内核，内核空间以外剩下的空间给用户使用也被称为用户空间。</p>
+<p><img alt="Kernel User Memory Split - From [2]" src="../04_kernelUserMemorySplit.png" /></p>
+<p>这并不意味着内核需要使用那么多物理内存，只是它可以支配这么多物理内存。内核空间在页表中被标记为特权代码（privileged code）（R2 及以下）的专有空间，因此，如果用户层的程序尝试访问它，则会触发页错误（page fault）。在 Linux 中，内核空间始终存在，并在所有进程中映射相同的物理内存。内核代码和数据始终是可寻址的，随时准备处理中断或系统调用。相比之下，每当发生进程切换时，地址空间的用户模式部分的映射都会更改：</p>
+<p><img alt="Virtual Memory in Process Switch - From [2]" src="../04_virtualMemoryInProcessSwitch.png" /></p>
+<p>蓝色区域表示映射到物理内存的虚拟地址，而白色区域表示未映射。在上面的例子中，Firefox 由于其对于内存的需求更大而使用了更多的虚拟地址空间。地址空间中的不同条带对应于堆、堆栈等内存段。以下是 Linux 进程中的标准段布局：</p>
+<p><img alt="Linux Flexible Address Space Layout - From [2]" src="../04_linuxFlexibleAddressSpaceLayout.png" /></p>
+<p>如果计算机的每个进程精确地按照上面显示的段起始地址运行时，远程利用安全漏洞将变得非常容易，因此随机排布的地址空间逐渐变得流行起来。Linux 通过向堆栈、内存映射段和堆的起始地址添加偏移量使得地址空间变得随机。</p>
+<h3 id="stack">栈 Stack</h3>
+<p>进程地址空间中最顶层的段是<strong>堆栈</strong>，大多数编程语言都使用它来<strong>存储局部变量和函数参数</strong>。调用一个方法（method）或函数（function）会将新的<strong>栈帧</strong>（stack frame）推送到堆栈上。当函数返回时，栈帧将被销毁。之所以这种简单的设计能够实现，是因为数据遵循严格的<strong>后进先出</strong>顺序，这意味着不需要复杂的数据结构来跟踪堆栈内容——一个简单的指向堆栈顶部的指针就可以了。因此，入栈（push）和出栈（pop）是非常快速和精确的。此外，堆栈区域的不断重用往往会将活动堆栈内存保留在 CPU 缓存中，从而加快访问速度。进程中的<strong>每个线程</strong>都有自己的堆栈。</p>
+<p>通过不断地向堆栈中压入数据使其超过其容纳能力，可能会耗尽堆栈所对应的内存区域。这会触发一个<strong>页错误</strong>（page fault），并且由 Linux 中的 <code>expand_stack()</code> 进行处理，而 <code>expand_stack()</code> 又会调用 <code>acct_stack_growth()</code> 来检查是否适合扩展堆栈。如果堆栈大小低于 <code>RLIMIT_STACK</code> （通常为 8 MB），那么通常堆栈会增长，程序继续运行。但是，如果已达到最大堆栈大小，则会出现<strong>堆栈溢出</strong>，并且程序会收到<strong>段错误</strong>（Segmentation Fault）。虽然映射的堆栈区域会扩展以满足需求，但当堆栈变小时，映射的区域并不会缩小。</p>
+<p>动态栈增长是访问未映射内存区域（如上文图中白色区域所示）可能唯一一种有效的情况。对未映射内存的任何其他访问都会触发由于<strong>段错误</strong>导致的<strong>页错误</strong>。除此之外，某些映射区域是只读的，因此对这些区域的写入尝试也会导致<strong>段错误</strong>。</p>
+<h3 id="memory-mapping-segment">内存映射段 Memory Mapping Segment</h3>
+<p>在堆栈下方，是<strong>内存映射段</strong>。在这里，内核将文件的内容直接映射到内存。内存映射是一种方便高效的文件 I/O 方式，因此可以将它用于加载动态库。也可以创建与不任何文件对应的匿名内存映射，用于程序数据。在 Linux 中，如果通过 malloc() 请求大块内存，C 运行库将创建这样的匿名映射，<strong>而不是使用堆内存</strong>。“大块”表示大于 <code>MMAP_THRESHOLD</code> 字节，默认为 128 kB，可通过 <code>mallopt()</code> 进行调整。</p>
+<h3 id="heap">堆 Heap</h3>
+<p>接下来是堆。和栈一样，堆提供运行时内存分配。堆用于存储那些生存期与函数调用无关的数据。大部分语言都提供了堆管理功能。在C语言中，堆分配的接口是 <code>malloc()</code> 系列函数，而在具有垃圾收集功能的语言（如 C#）中，此接口是 <code>new</code> 关键字。</p>
+<p>如果堆中有足够的空间来满足内存请求，则可以由语言在运行时处理该请求，而无需内核参与。否则，将会通过 <code>brk()</code> 系统调用（实现）扩大堆，为请求的内存块腾出空间。堆管理很复杂，需要复杂的算法来努力提高速度和高效的内存使用，以应对程序混乱的分配模式。为堆请求提供服务所需的时间可能会有很大差异。实时系统具有专用分配器来处理此问题。</p>
+<p>堆也可能变得碎片化，如下所示：</p>
+<p><img alt="Fragmented Heap - From [2]" src="../04_fragmentedHeap.png" /></p>
+<h3 id="bss-bss-segment">BSS 段 BSS Segment</h3>
+<p>最后，我们进入内存的最底部的内存段：BSS 段、数据段和代码段。</p>
+<p>在 C 语言中，BSS（Block Started by Symbol）段存储<strong>未初始化的静态（全局）变量的内容</strong>，其值不是由程序员在源代码中设置的。BSS 内存区域是匿名的：它不映射到任何文件。</p>
+<h3 id="data-segment">数据段 Data Segment</h3>
+<p>数据段保存源代码中<strong>已初始化的静态（全局）变量的内容</strong>。此内存区域<strong>不是匿名的</strong>。它映射程序二进制映像的一部分，其中包含源代码中给出的初始静态值。尽管数据段映射了一个文件，但它是<strong>私有内存映射</strong>（private memory mapping），这意味着对内存的更新不会影响被映射的文件。</p>
+<h3 id="text-segmentelf">代码段 Text Segment（ELF）</h3>
+<p>代码段是只读的，保存了你全部的代码外加零零碎碎的东西，比如字符串值。代码段将你的二进制文件也映射到了内存中，但对此区域的写操作都会使你的程序收到<strong>段错误</strong>。这有助于防范指针错误，虽然不像在编程时就注意防范来得那么有效。</p>
+<h2 id="bss">关于 BSS 段和数据段</h2>
+<p>以下有两段代码</p>
+<pre><code class="language-c">//1.c
+int array[100000];
 int main()
 {
-    FILE *f1,*f2;
-    char a[100];
-    char b[100];
-    f1=fopen(&quot;1.txt&quot;,&quot;r&quot;);
-    f2=fopen(&quot;2.txt&quot;,&quot;r&quot;);
-    for(int i=1;i&lt;=1000;i++)
-    {
-        fgets(a,100,f1);
-        fgets(b,100,f2);
-        if(a[strlen(a)-1]=='\n')
-            a[strlen(a)-1]='\0';
-        if(b[strlen(b)-1]=='\n')
-            b[strlen(b)-1]='\0';
-        printf(&quot;{\&quot;id\&quot;:\&quot;%s\&quot;,\&quot;answer\&quot;:\&quot;%s\&quot;},&quot;,b,a);
-    }
-    return 0;
+    //your code
 }
 </code></pre>
-<p>然后很容易就能写出完整 payload ，用 burpsuite 提交一下就行。</p>
-<h2 id="web-_1">Web - 真真历险记</h2>
-<p>我们关注到 <code>CyberSpace Securiety</code> 这个单词是蓝色的，很特殊啊。最后面也有提示说看单词首字母缩写，很明显得出 <code>CSS</code> 。</p>
-<p>我们翻翻 CSS ，可以看到有四个被注释掉的部分，拼接起来可以看到：</p>
-<pre><code>(+[![]]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]][([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]])[+!+[]+[+[]]]+([][[]]+[])[+!+[]]+(![]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+[])[+!+[]]+([][[]]+[])[+[]]+([][(![]+[])[+[]]+([![]]+[][[]])[+!+[]+[+[]]]+(![]+[])[!+[]+!+[]]+(![]+[])[!+[]+!+[]]]+[])[!+[]+!+[]+!+[]]+(!![]+[])[+[]]+(!![]+
-后面略
-</code></pre>
-<p>很容易想到 JSFuck 。</p>
-<p>我们扔到浏览器控制台运行一下，直接得到 flag 。</p>
-<h2 id="pwn-checkin">Pwn - checkin</h2>
-<p>简单的签到题。扔进 IDA ，可以发现下面这部分</p>
-<pre><code class="language-c">    gets(buf);
-    if ( !strncmp(ch_0, &quot;BUPTBUPT&quot;, 8uLL) )
-      break;
-    puts(&quot;\x1B[40;31m ### Try again ### \x1B[0m &quot;);
-    printf(&quot;[buf] ==&gt; %s\n&quot;, buf);
-    printf(&quot;[ch] ==&gt; %s\n&quot;, ch_0);
-</code></pre>
-<p>所以我们只要构造一个字符串，填充完 buf 数组，再溢出到 ch 数组即可。</p>
-<p>构造的字符串如下 <code>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUPTBUPT</code></p>
-<p>直接 <code>cat flag</code></p>
-<h2 id="misc-">Misc - 北邮人之声</h2>
-<p>很明显这段音频是倒放过的。</p>
-<p>再次倒放，然后辨认每个单词的首字母即可（注意大括号的英文）。</p>
-<h2 id="misc-just_play">Misc - Just_Play</h2>
-<p>根据剧情，我们需要搜集三种颜色的宝石。</p>
-<p>我们拿出 <em>rgss3a 解包器</em> ，直接解包游戏根目录下的 <em>Game.rgss3a</em> 文件。</p>
-<p>我们直接使用文本编辑器打开解压得到的一堆 <code>*.rvdata2</code> （有乱码没关系，大部分对话都是明文的），搜索 <code>flag</code> 字符串，可以看到有一个名为 <code>FLAG PART1</code> 的物品，物品描述是 flag 的第一部分，还有出题人留下的一句话。</p>
-<p>仿照上一步继续搜索，可以得到 NPC 拿到三颗宝石后的对话，得到 flag 第三部分。</p>
-<p>我们接着拿出 <em>RMModify</em> 游戏存档编辑器，打开游戏存档（肯定要先进入游戏存个档），在浏览角色技能时可以看到名为 <em>鼠鼠的呻吟</em> 、<em>鼠鼠的呻吟？</em> 的两个技能。我们先将这两个技能打开（顺便可以开一下 <em>不遇敌（暗雷）</em> 方便跑图。</p>
-<p>随后进入游戏开始走剧情。</p>
-<p>我们会在迷宫部分发现地图上有 <code>1s_S0</code> 字样，这个很明显也是 flag 的一部分。</p>
-<p>在遇到 A.R. 的时候，我使用了 <em>鼠鼠的呻吟</em> 技能，发现背景音乐中掺杂着说话声，于是寻找游戏资源中这个技能的音频。</p>
-<p>我们打开 <code>\Audio\SE</code> 文件夹，在一堆 .ogg 的文件中找到一个 <em>FF.mp3</em> ，听一下音频即可得到 flag 的第四部分。</p>
-<h2 id="misc-black-tea">Misc - Black Tea</h2>
-<p>这道题一眼就可以看出这是 <em>不可能的棋盘谜题</em></p>
-<p>下面是网络上的解法：</p>
-<pre><code>来源：https://www.bilibili.com/video/av711666649/
-
-64格棋盘问题的解法，精简版：
-
-首先定义非负整数a、b的异或运算a⊕b为不带任何进位的二进制加法。
-例如：6⊕13，也即二进制里的110⊕1101，二进制个位是0+1=1，二位是1+0=1，四位是1+1=(1)0，不进位只保留一个0，八位是0+1=1，所以结果是二进制的1011，也即6⊕13=11。
-异或的性质有：
-1. 交换律：a⊕b=b⊕a
-2. 结合律：a⊕(b⊕c)=(a⊕b)⊕c
-3. 单位元：a⊕0=0⊕a=a
-4. 加即为减：a⊕a=0
-5. 对2的幂封闭：假设存在非负整数n使得a,b&lt;2^n，那么有a⊕b&lt;2^n。
-证明及其他具体细节请参考百度等。
-
-给64个棋盘格标号为0、1、……、63。假设在某一时刻棋盘上任意摆满了硬币，那么从这个硬币的排列里挑出所有正面朝上的硬币，把所有这些硬币的序号取异或运算，然后可以把棋盘上的这一种硬币排列对应到序号为这个运算结果的棋盘格上，如果没有硬币朝上则取0号棋盘格。当1号囚犯进入时，会见到对应某a号方格的硬币排列，和藏在某x号方格下的钥匙。此时，1号囚犯翻转a⊕x号方格上的硬币。
-例如：1号囚犯见到3、14、15号硬币正面朝上，此时对应a=3⊕14⊕15=2。如果钥匙藏在x=9号格下，那么1号囚犯选择翻转a⊕x=2⊕9=11号硬币。2号囚犯进入，见到3、11、14、15号硬币正面朝上，会计算x=3⊕11⊕14⊕15=9。
-
-接下来分析这个策略为什么会成功：由以上性质5，1号囚犯永远有硬币可以翻。
-1. 如果这个硬币a⊕x本来正面朝下，那么翻转之后的硬币排列对应的结果是a⊕(a⊕x)，这其中a是本来所有硬币的运算结果，而(a⊕x)是新多出来的一项。由于上述性质2到4，a⊕(a⊕x)=x，那么2号囚犯顺利得到钥匙x。
-2. 如果这个硬币a⊕x本来正面朝上，那么翻转之后本来的运算结果仍然是a，但是少了(a⊕x)这一项。由于性质4，从a中“减去”(a⊕x)等同于向a中“加上”(a⊕x)，因此得到的结果仍然是a⊕(a⊕x)=x，2号囚犯顺利得到钥匙x。
-</code></pre>
-<p>我们可以根据此解法写一个程序来进行计算。</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-using namespace std;
-
+<pre><code class="language-c">//2.c
+int array[100000]={1,2,3,4,5,6};
 int main()
 {
-    int a,ans=0;
-    for(int i=0;i&lt;=63;i++)
-    {
-        cin&gt;&gt;a;
-        if(a)
-        {
-            if(ans==0)
-                ans=i;
-            else
-                ans^=i;
-        }
-    }
-    cout&lt;&lt;ans;
-    return 0;
+    //your code
 }
 </code></pre>
-<p>然后 nc 上去回答 10 次即可得到 flag 。</p>
+<p>进行编译后，我们发现：</p>
+<p><img alt="1.c outputfile" src="../04_1-out.png" />
+<img alt="2.c outputfile" src="../04_2-out.png" /></p>
+<p>第一段代码编译出来的可执行文件比第二段的<strong>小得多</strong>。</p>
+<p>这是因为第一段代码全局变量没有初始化，保存在了 BSS 段，不需要占用可执行文件空间，因为其内容是由操作系统在程序运行时进行初始化；而第二段代码的全局变量的内容保存在了数据段，因此两段代码编译出的可执行文件大小不一样。</p>
+<hr />
+<p>参考资料：</p>
+<ol>
+<li>剖析程序的内存布局 https://zhuanlan.zhihu.com/p/98560503</li>
+<li>Anatomy of a Program in Memory https://manybutfinite.com/post/anatomy-of-a-program-in-memory/</li>
+<li>你该知道你写的程序的内存布局  https://www.bilibili.com/read/cv18183122/</li>
+<li>C到C++的升级 http://t.zoukankan.com/songhe364826110-p-11517145.html</li>
+</ol>
 <hr />
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
 
@@ -1187,7 +1059,7 @@ int main()
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../assemble/04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 04" rel="prev">
+        <a href="../03/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 汇编详解" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1196,11 +1068,26 @@ int main()
               <span class="md-footer__direction">
                 Previous
               </span>
-              04
+              汇编详解
             </div>
           </div>
         </a>
       
+      
+        
+        <a href="../../wp/2022-10_TSCTF-J/" class="md-footer__link md-footer__link--next" aria-label="Next: TSCTF-J WP" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TSCTF-J WP
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
