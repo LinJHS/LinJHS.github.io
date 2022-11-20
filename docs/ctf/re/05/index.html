@@ -1,0 +1,1574 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>PE 结构简述 - LinJHS's Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#02a6f2">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="light-blue" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pe" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LinJHS&#39;s Docs" class="md-header__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LinJHS's Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PE 结构简述
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LinJHS&#39;s Docs" class="md-nav__button md-logo" aria-label="LinJHS's Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    LinJHS's Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome to LinJHS's Docs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Acm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Acm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Acm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/acm/" class="md-nav__link">
+        ACM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          01 String
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01 String" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          01 String
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/01_TrieTree/" class="md-nav__link">
+        Trie 树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/02_KMP/" class="md-nav__link">
+        KMP 算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/03_AC-Automaton/" class="md-nav__link">
+        AC 自动机
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/01_String/04_Hash/" class="md-nav__link">
+        哈希和哈希表
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          02 Tree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="02 Tree" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          02 Tree
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/01_LCA/" class="md-nav__link">
+        求 LCA（最近公共祖先）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/02_RMQ/" class="md-nav__link">
+        RMQ 问题（区间最值问题）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/03_BinaryIndexedTree/" class="md-nav__link">
+        树状数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/02_Tree/04_SegmentTree/" class="md-nav__link">
+        线段树
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          03 Graph
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="03 Graph" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          03 Graph
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/01_MST/" class="md-nav__link">
+        最小生成树 MST
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/02_ShortPath/" class="md-nav__link">
+        最短路问题
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/03_StronglyConnectedComponents/" class="md-nav__link">
+        强连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/04_DFS-Tree/" class="md-nav__link">
+        DFS 树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/05_CutVertexAndCutEdge/" class="md-nav__link">
+        割点和桥
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/06_BiconnectedComponent/" class="md-nav__link">
+        双连通分量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/03_Graph/07_BipartiteGraph/" class="md-nav__link">
+        二分图
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          04 ComputationalGeometry
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="04 ComputationalGeometry" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          04 ComputationalGeometry
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/04_ComputationalGeometry/01_ConvexHull/" class="md-nav__link">
+        凸包（Convex Hull）
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          05 NumberTheory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="05 NumberTheory" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          05 NumberTheory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/05_NumberTheory/prime/" class="md-nav__link">
+        素数的判定
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Ctf
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ctf" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Ctf
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/" class="md-nav__link">
+        CTF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Re
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Re" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Re
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        寄存器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02/" class="md-nav__link">
+        汇编常用指令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/" class="md-nav__link">
+        汇编详解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04/" class="md-nav__link">
+        程序内存布局
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          PE 结构简述
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        PE 结构简述
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pe_1" class="md-nav__link">
+    PE 简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pe_2" class="md-nav__link">
+    PE 结构概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    数据管理结构
+  </a>
+  
+    <nav class="md-nav" aria-label="数据管理结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-dos" class="md-nav__link">
+    01 DOS 头
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-pe-nt" class="md-nav__link">
+    02 PE 头（NT 头）结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    03 节表（区块表）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数据部分——区块（节）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Wp
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Wp" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Wp
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wp/2022-10_TSCTF-J/" class="md-nav__link">
+        TSCTF-J WP
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pe_1" class="md-nav__link">
+    PE 简介
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pe_2" class="md-nav__link">
+    PE 结构概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    数据管理结构
+  </a>
+  
+    <nav class="md-nav" aria-label="数据管理结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#01-dos" class="md-nav__link">
+    01 DOS 头
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#02-pe-nt" class="md-nav__link">
+    02 PE 头（NT 头）结构
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#03" class="md-nav__link">
+    03 节表（区块表）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    数据部分——区块（节）
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="pe">PE 结构简述</h1>
+<h2 id="pe_1">PE 简介</h2>
+<p>PE 文件的全称是 Portable Executable ，意为可移植的可执行的文件，常见的 EXE、DLL、OCX、SYS、COM 都是 PE 文件，PE 文件是微软 Windows 操作系统上的程序文件（可能是间接被执行，如 DLL ）。</p>
+<h2 id="pe_2">PE 结构概述</h2>
+<p>PE 文件大致可以分为两部分，即数据管理结构及数据部分。</p>
+<ol>
+<li>数据管理结构包含：<strong>DOS 头、PE 头、节表</strong>。</li>
+<li>数据部分包括：<strong>节表数据</strong>（节表数据是包含着代码、数据等内容）。</li>
+</ol>
+<p><img alt="PE 结构" src="../PE_1.png" /></p>
+<h2 id="_1">数据管理结构</h2>
+<h3 id="01-dos">01 DOS 头</h3>
+<p>所有的 PE 文件都是以一个 64 字节的 DOS 程序开始。当 PE 文件在 DOS 下执行时，DOS 可以识别出这是一个有效的执行体，然后运行 DOS Stub 。这个 DOS 头只是为了兼容早期的 DOS 操作系统。不需要详细了解。</p>
+<p><strong>DOS HEADER</strong> 和 <strong>DOS Stub</strong> 合称为 DOS 文件头。</p>
+<p>PE 文件前 <code>0x40</code> 个字节是一个传统的 DOS 头，结构为 <code>IMAGE_DOS_HEADER</code> 。如果在 DOS 中执行文件，则会调用存根程序（DOS Stub）。 它通常显示合适的消息；但是，任何有效的 DOS 应用程序都可以是存根程序。</p>
+<p>winn.h 中定义:</p>
+<pre><code class="language-c">#define IMAGE_DOS_SIGNATURE 0x5A4D      // MZ
+
+typedef struct _IMAGE_DOS_HEADER {      // DOS .EXE header
+    WORD   e_magic;                     // Magic number
+    WORD   e_cblp;                      // Bytes on last page of file
+    WORD   e_cp;                        // Pages in file
+    WORD   e_crlc;                      // Relocations
+    WORD   e_cparhdr;                   // Size of header in paragraphs
+    WORD   e_minalloc;                  // Minimum extra paragraphs needed
+    WORD   e_maxalloc;                  // Maximum extra paragraphs needed
+    WORD   e_ss;                        // Initial (relative) SS value
+    WORD   e_sp;                        // Initial SP value
+    WORD   e_csum;                      // Checksum
+    WORD   e_ip;                        // Initial IP value
+    WORD   e_cs;                        // Initial (relative) CS value
+    WORD   e_lfarlc;                    // File address of relocation table
+    WORD   e_ovno;                      // Overlay number
+    WORD   e_res[4];                    // Reserved words
+    WORD   e_oemid;                     // OEM identifier (for e_oeminfo)
+    WORD   e_oeminfo;                   // OEM information; e_oemid specific
+    WORD   e_res2[10];                  // Reserved words
+    LONG   e_lfanew;                    // File address of new exe header
+} IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
+</code></pre>
+<p>重要字段:</p>
+<ol>
+<li>e_magic -&gt; DOS 头的标识，为 <code>0x4D</code> 和 <code>0x5A</code> 。分别为字母 <code>MZ</code> 。</li>
+<li>e_lfanew -&gt; 一个双字数据，为 exe 头的文件地址。 Windows 加载器通过它可以跳过 DOS Stub 部分直接找到 PE 头。</li>
+</ol>
+<p>DOS 头后跟一个 DOS Stub 数据，是链接器链接执行文件的时候加入的部分数据，一般是“This program cannot be run in DOS mode.”。这个可以通过修改链接器的设置来修改成自己定义的数据。</p>
+<h3 id="02-pe-nt">02 PE 头（NT 头）结构</h3>
+<p>PE 头分为三个部分，分别是 <strong>PE 标识</strong>（IMAGE_NT_SIGNATRUE）、<strong>映像文件头</strong>（IMAGE_FILE_HEADER）、<strong>可选映像头</strong>（IMAHE_OPTION_HEADER）。PE 头是固定不变的，位于 DOS 头部中 e_ifanew 字段指出位置。</p>
+<pre><code class="language-c">//x86
+typedef struct _IMAGE_NT_HEADERS {
+    DWORD Signature;
+    IMAGE_FILE_HEADER FileHeader;
+    IMAGE_OPTIONAL_HEADER32 OptionalHeader;
+} IMAGE_NT_HEADERS32, *PIMAGE_NT_HEADERS32;
+//x64
+typedef struct _IMAGE_NT_HEADERS {
+    DWORD Signature;
+    IMAGE_FILE_HEADER FileHeader;
+    IMAGE_OPTIONAL_HEADER64 OptionalHeader;
+} IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
+</code></pre>
+<p>其中，<code>Signature</code> 为 <code>0x00004550</code> ，即字符串 <code>"PE\0\0"</code></p>
+<p>接下来是 <strong>映像文件头</strong>（FileHeader）：</p>
+<pre><code class="language-c">typedef struct _IMAGE_FILE_HEADER {
+    WORD    Machine;              // 运行平台，cpu类型
+    WORD    NumberOfSections;     // 文件的区块数（SectionTable 项的数量）
+    DWORD   TimeDateStamp;        // 时间戳，文件创建日期与时间
+    DWORD   PointerToSymbolTable; // 指向符号表（用于调试）
+    DWORD   NumberOfSymbols;      // 符号表中符号的个数（用于调试）
+    WORD    SizeOfOptionalHeader; // IMAGE_OPTIONAL_HEADER 结构大小
+    WORD    Characteristics;      // 文件属性
+} IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
+</code></pre>
+<p>重要字段：</p>
+<ol>
+<li>NumberOfSections：定义 PE 文件 Section 的个数。如果对 PE 文件新增或删除 Section 的话，一定要记的修改此域。</li>
+<li>SizeOfOptionalHeader：定义 OptionHeader 结构的大小。</li>
+<li>Characteristics：主要用来标识当前的 PE 文件是执行文件还是 DLL 。其各位都有具体的含义。</li>
+</ol>
+<p>其中 Characteristics 字段：</p>
+<table>
+<thead>
+<tr>
+<th>宏定义</th>
+<th>值</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMAGE_FILE_RELOCS_STRIPPED</td>
+<td><code>0x0001</code></td>
+<td>文件中不存在重定位信息</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_EXECUTABLE_IMAGE</td>
+<td><code>0x0002</code></td>
+<td>文件是可执行的</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_LINE_NUMS_STRIPPED</td>
+<td><code>0x0004</code></td>
+<td>不存在行信息</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_LOCAL_SYMS_STRIPPED</td>
+<td><code>0x0008</code></td>
+<td>不存在符号信息</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_BYTES_REVERSED_LO</td>
+<td></td>
+<td>小尾方式</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_32BIT_MACHINE</td>
+<td><code>0x0100</code></td>
+<td>只在 32 位平台运行</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_DEBUG_STRIPPED</td>
+<td></td>
+<td>不包含调试信息</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</td>
+<td></td>
+<td>不能从可移动盘运行</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_NET_RUN_FROM_SWAP</td>
+<td></td>
+<td>不能从网络运行</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_SYSTEM</td>
+<td><code>0x2000</code></td>
+<td>系统文件。不能直接运行</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_DLL</td>
+<td><code>0x1000</code></td>
+<td>DLL 文件</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_UP_SYSTEM_ONLY</td>
+<td></td>
+<td>文件不能在多处理器上运行</td>
+</tr>
+<tr>
+<td>IMAGE_FILE_BYTES_REVERSED_HI</td>
+<td></td>
+<td>大尾方式</td>
+</tr>
+</tbody>
+</table>
+<p>接着是 <strong>可选映像头</strong>（OptionalHeader）</p>
+<pre><code class="language-c">//x86
+typedef struct _IMAGE_OPTIONAL_HEADER {
+    //
+    // Standard fields.
+    //
+    WORD    Magic;                  //标志字
+    BYTE    MajorLinkerVersion;     //链接器主版本号
+    BYTE    MinorLinkerVersion;     //链接器次版本号
+    DWORD   SizeOfCode;             //所有含有代码的区块大小*
+    DWORD   SizeOfInitializedData;  //所有初始化数据区块的大小
+    DWORD   SizeOfUninitializedData;//所有未初始化数据区块的大小
+    DWORD   AddressOfEntryPoint;    //程序执行入口 RVA*
+    DWORD   BaseOfCode;             //代码区块起始 RVA*
+    DWORD   BaseOfData;             //数据区块起始 RVA
+    //
+    // NT additional fields.
+    //
+    DWORD   ImageBase;              //程序默认载入基址*
+    DWORD   SectionAlignment;       //内存中区块的对齐值*
+    DWORD   FileAlignment;          //文件中区块的对齐值*
+    WORD    MajorOperatingSystemVersion; //操作系统主版本号
+    WORD    MinorOperatingSystemVersion; //操作系统次版本号
+    WORD    MajorImageVersion;      //用户自定义主版本号
+    WORD    MinorImageVersion;      //用户自定义次版本号
+    WORD    MajorSubsystemVersion;  //所需子系统主版本号
+    WORD    MinorSubsystemVersion;  //所需子系统次版本号
+    DWORD   Win32VersionValue;      //保留，通常被设置为 0
+    DWORD   SizeOfImage;            //映像载入内存后的总尺寸*
+    DWORD   SizeOfHeaders;          //DOS 头、PE 文件头、区块表总大小*
+    DWORD   CheckSum;               //映像校验和
+    WORD    Subsystem;              //文件子系统
+    WORD    DllCharacteristics;     //显示 DLL 特性的旗标
+    DWORD   SizeOfStackReserve;     //初始化时栈的大小*
+    DWORD   SizeOfStackCommit;      //初始化时实际提交栈的大小*
+    DWORD   SizeOfHeapReserve;      //初始化时保留堆的大小*
+    DWORD   SizeOfHeapCommit;       //初始化时实际保留堆的大小*
+    DWORD   LoaderFlags;            //与调试相关，默认值为0
+    DWORD   NumberOfRvaAndSizes;    //数据目录表的项数*
+    IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
+} IMAGE_OPTIONAL_HEADER32, *PIMAGE_OPTIONAL_HEADER32;
+//x64
+typedef struct _IMAGE_OPTIONAL_HEADER64 {
+    //
+    // Standard fields.
+    //
+    WORD        Magic;
+    BYTE        MajorLinkerVersion;
+    BYTE        MinorLinkerVersion;
+    DWORD       SizeOfCode;
+    DWORD       SizeOfInitializedData;
+    DWORD       SizeOfUninitializedData;
+    DWORD       AddressOfEntryPoint;
+    DWORD       BaseOfCode;
+    //
+    // NT additional fields.
+    //
+    ULONGLONG   ImageBase;
+    DWORD       SectionAlignment;
+    DWORD       FileAlignment;
+    WORD        MajorOperatingSystemVersion;
+    WORD        MinorOperatingSystemVersion;
+    WORD        MajorImageVersion;
+    WORD        MinorImageVersion;
+    WORD        MajorSubsystemVersion;
+    WORD        MinorSubsystemVersion;
+    DWORD       Win32VersionValue;
+    DWORD       SizeOfImage;
+    DWORD       SizeOfHeaders;
+    DWORD       CheckSum;
+    WORD        Subsystem;
+    WORD        DllCharacteristics;
+    ULONGLONG   SizeOfStackReserve;
+    ULONGLONG   SizeOfStackCommit;
+    ULONGLONG   SizeOfHeapReserve;
+    ULONGLONG   SizeOfHeapCommit;
+    DWORD       LoaderFlags;
+    DWORD       NumberOfRvaAndSizes;
+    IMAGE_DATA_DIRECTORY DataDirectory[IMAGE_NUMBEROF_DIRECTORY_ENTRIES];
+} IMAGE_OPTIONAL_HEADER64, *PIMAGE_OPTIONAL_HEADER64;
+</code></pre>
+<p>对比 winnt.h 中定义的 32 位 PE 文件头与 64 位 PE 文件头，可以发现两者的区别在 <code>IMAGE_OPTIONAL_HEADER</code> ，其中有 6 处不同（以 64 位 PE 文件头说明）：</p>
+<ol>
+<li>移除了 <code>DWORD BaseOfData</code>字段</li>
+<li>以下 5 个字段类型由 <code>DWORD</code> 更改为了 <code>ULONGLONG</code></li>
+</ol>
+<pre><code class="language-c">    ULONGLONG   ImageBase;
+    ULONGLONG   SizeOfStackReserve;
+    ULONGLONG   SizeOfStackCommit;
+    ULONGLONG   SizeOfHeapReserve;
+    ULONGLONG   SizeOfHeapCommit;
+</code></pre>
+<p>重要字段：</p>
+<ol>
+<li>SizeOfCode：有 IMAGE_SCN_NT_CODE 属性的区块的总大小，该字段与 .text 块的大小匹配</li>
+<li>
+<p>AddressOfEntryPoint：程序执行入口 RVA</p>
+<p><em>注：RVA 相对虚拟偏移</em></p>
+<p>对于 DLL ，这个入口点在进程初始化和关闭时及线程创建和结束时被调用。在大多数可执行文件中，这个地址不直接指向 Main、WinMain 或 DllMain 函数，而指向运行时的库代码（ntdll_RtlUserThreadStart）并由它来调用上述函数。在 DLL 中，链接器的 /NOENTRY 开关可以设置这个域为 0 。</p>
+</li>
+<li>
+<p>BaseOfCode：代码段的起始 RVA 。代码段通常位于PE文件头之后,数据块之前</p>
+</li>
+<li>
+<p>ImageBase：</p>
+<p>文件在内存中的首选载入地址。如果有可能（也就是说，如果目前没有其他文件占据这块地址，它就是正确对齐的并且是一个合法的地址），加载器会试图在这个地址载入 PE 文件。</p>
+<p>如果 PE 文件是在这个地址载入的，那么加载器将跳过应用基址重定位的步骤。如果该地址被占用，加载器会选用其它地址作为载入地址，然后执行应用基址重定位的步骤</p>
+</li>
+<li>
+<p>SectionAlignment：载入内存时的区块对齐大小 / 内存中区块的对齐大小。最小对齐尺寸为每页 <code>0x1000 (4kb)</code> 。</p>
+</li>
+<li>FileAlignment：磁盘上 PE 文件的区块对齐大小。该值为 2 的幂，且最小值为 <code>0x200(512b)</code> 。</li>
+<li>SizeOfImage：映像载入内存后的总尺寸。</li>
+<li>SizeOfHeaders：DOS 头、PE 文件头、区块表的总尺寸</li>
+<li>SizeOfStackReserve：在 EXE 文件里为线程保留的栈的大小</li>
+<li>SizeOfStackCommit：在 EXE 文件里，一开始即被委派给栈的内存，默认值为 <code>0x1000(4kb)</code></li>
+<li>SizeOfHeapReserve：在 EXE 文件里，为进程默认堆保留的内存，默认值为 <code>0x100000(1MB)</code></li>
+<li>SizeOfHeapCommit：在 EXE 文件里，委派给堆的内存，默认值 <code>0x1000(4kb)</code></li>
+<li>CheckSum：映像的校验和。IMACEHLP.DLL 中的 <code>CheckSumMappedFile</code> 函数可以计算该值。一般的 EXE 文件该值可以是 0 ，但一些内核模式的驱动程序和系统 DLL 必须有一个校验和。当链接器的 <code>/RELEASE</code> 开关被使用时，校验和被置于文件中。</li>
+</ol>
+<p>最后 128 个字节为数据目录（Data Directory）。它由 16 个<code>IMAGE_DATA_DIRECTORY</code> 结构组成的数组构成，指向输出表、输入表、资源块、重定位等数据目录项的 RVA（相对虚拟地址）和大小。</p>
+<pre><code class="language-c">typedef struct _IMAGE_DATA_DIRECTORY {
+    DWORD   VirtualAddress; //数据块的起始 RVA
+    DWORD   Size;           //数据块的长度
+} IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;
+</code></pre>
+<p>数据目录项是<strong>可选</strong>的，并不是所有的数据目录项都会有值。数据目录项包括：输入表、输出表、资源、例外、安全、重定位、调试、版权、全局指针、Tls 表、载入配制、输入范围、IAT、延迟输入、COM、保留 共十六个项。</p>
+<h3 id="03">03 节表（区块表）</h3>
+<p>在 PE 文件头与原始数据之间存在一个区块表（Section Table），它是一个 IMAGE_SECTION_HEADER 结构数组，区块表包含每个块在映像中的信息（如位置、长度、属性），分别指向不同的区块实体。</p>
+<pre><code class="language-c">typedef struct _IMAGE_SECTION_HEADER {
+    Name                        //8 个字节的块名
+    union
+    {
+        DWORD PhysicalAddress;
+        DWORD VirtualSize;
+    } Misc;                     //区块尺寸
+    DWORD VirtualAddress        //区块的 RVA 地址
+    DWORD SizeOfRawData;        //在文件中对齐后的尺寸
+    DWORD PointerToRawData;     //在文件中偏移
+    DWORD PointerToRelocations; //在 OBJ 文件中使用，重定位的偏移
+    DWORD PointerToLinenumbers; //行号表的偏移（供调试使用地）
+    WORD NumberOfRelocations;   //在 OBJ 文件中使用，重定位项数目
+    WORD NumberOfLinenumbers;   //行号表中行号的数目
+    DWORD Characteristics;      //区块属性，如可读，可写，可执行等
+} IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
+</code></pre>
+<p>一个 PE 文件至少需要两个 Section ，一个是存放代码，一个存放数据。NT 上的 PE 文件基本上有 9 个预定义的 Section 。分别是：.text ，.bss ，.rdata ，.data ，.rsrc ，.edata ，.idata ，.pdata 和 .debug 。一些 PE 文件中只需要其中的一部分区块。</p>
+<p>重要字段：</p>
+<ol>
+<li>
+<p>Name：块名，这是一个 8 位 ASCII 码名，用来定义块名。多数块名以一个 "." 开始（如 .text），尽管许多 PE 文档都认为这个 "." 实际上并不是必须的。值得注意的是，如果块名超过 8 位，则最后的 NULL 不存在。带有一个 "$" 的区块名字会从链接器那里得到特殊的对待，前面带 "$" 的相同名字的区块被合并，在合并后的区块中它们是按 "$" 后面的字符字母顺序进行合并的。</p>
+<p>常见区块与区块合并</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.text</td>
+<td>默认的代码区块，它的内容全是指令代码。PE 文件运行在 32 位方式下，不受 16 位段的约束，所以没有理由把代码放到不同的区块中。链接器把所有目标文件的 .text 块链接成一个大的 .text 块。如果使用 Borland C++ ，其编译器将产生的代码存储于名为 code 的区域，其链接器链接的结果是使代码块的名称不是 .text ，而是 code</td>
+</tr>
+<tr>
+<td>.data</td>
+<td>磨人的读 / 写数据区块。全局变量，静态变量一般放在这里。</td>
+</tr>
+<tr>
+<td>.rdata</td>
+<td>默认的只读数据区块，但程序很少用到该块中的数据，至少有两种情况要用到 .rdata 块。一是在 Microsoft 链接器产生的 EXE 文件中，用于存放调试目录；二是用于存放说明字符串。如果程序的 DEF 文件中指定了 DESCRIPTION . 字符串就会出现在 .rdata 块中</td>
+</tr>
+<tr>
+<td>.idata</td>
+<td>包含其他外来 DLL 的函数及数据信息，即输入表。将 .idata 区块合并到另一个区块已成为惯例，典型的是 .rdata 区块。链接器默认仅在创建一个 Release 模式的可执行文件时才将 .idata 区块合并到另一个区块中</td>
+</tr>
+<tr>
+<td>.edata</td>
+<td>输出表。当创建一个输出 API 或数据的可执行文件时，链接器会创建一个 .EXP 文件，这个 .EXP 文件包含一个 .edata 区块，它会被加入最后的可执行文件中。与 .idata 区块一样，.edata 区块也经常被发现合并到了 .text 或 .tdata 区块中</td>
+</tr>
+<tr>
+<td>.rsrc</td>
+<td>资源，包括模块的全部资源，例如图标、菜单、位图等。这个区块是只读的，无论如何都不应该命名为 .rsrc 以外的名字，也不能被合并到其他区块里</td>
+</tr>
+<tr>
+<td>.bss</td>
+<td>未初始化数据。很少使用，取而代之的是执行文件的 .data 区块的 VirtualSize 被扩展到足够大以存放未初始化的数据</td>
+</tr>
+<tr>
+<td>.crt</td>
+<td>用于支持 C++ 运行时（CRT）所添加的数据</td>
+</tr>
+<tr>
+<td>.tls</td>
+<td>TLS 的意思是线程局部存储器，用于支持通过 __declspec（thread）声明的线程局部存储变量的数据，既包括数据的初始化值，也包括运行时所需要的额外变量。</td>
+</tr>
+<tr>
+<td>.reloc</td>
+<td>可执行文件的基址重定位。基址重定位一般只是 DLL 需要，而不是 EXE 需要。在 Release 模式下，链接器不会给 EXE 文件加上基址重定位，重定位可以在链接时通过 /FIXED 开关关闭</td>
+</tr>
+<tr>
+<td>.sdata</td>
+<td>相对于全局指针的可被定位的“短的”读/写数据，用于 IA-64 和其他使用一个全局指针寄存器的体系结构。IA-64 上的常规大小的全局变量放在这个区块里</td>
+</tr>
+<tr>
+<td>.srdata</td>
+<td>相对于全局指针的可被定义的“短的”只读数据，用于 IA-64 和其他使用一个全局指针寄存器的体系结构。</td>
+</tr>
+<tr>
+<td>.pdata</td>
+<td>异常表，包含一个 CPU 特定的 IMAGE_RUNTIME_FUNCTION_ENTRY 结构数组，DataDirectory 中的 IMAGE_DIRECTORY_ENTRY_EXCEPTION 指向它。它用于异常处理，是基于表的体系结构，就像 IA-64 。唯一不使用基于表的异常处理的架构体系是 x86</td>
+</tr>
+<tr>
+<td>.debugSS</td>
+<td>OBJ 文件中 Codeview 格式的符号。这是一个变量长度的 Codeview 格式的符号记录流</td>
+</tr>
+<tr>
+<td>.debugST</td>
+<td>OBJ 文件中 Codeview 格式的类型记录。这是一个变量长度的 Codeview 格式的类型记录流</td>
+</tr>
+<tr>
+<td>.debugSP</td>
+<td>当时用预编译的头时，可以在 OBJ 文件中找到它</td>
+</tr>
+<tr>
+<td>.drectve</td>
+<td>包含连接器命令，只能在 OBJ 中找到它。命令是能被传递给连接器命令行的字符串，例如“-defaultlib:LIBC”。命令用空格字符分开</td>
+</tr>
+<tr>
+<td>.didat</td>
+<td>延迟载入的输入数据，只能在非 Release 模式的可执行文件中找到。在 Release 模式下，延迟载入的数据会被合并到另一个区块中</td>
+</tr>
+</tbody>
+</table>
+<p>可以通过声明，将数据插入自定义的区块，而不是默认的区块。</p>
+<p>链接器的工作是合并所有 OBJ 和库中所有的块，使其最终成为一个合适的区块。OBJ 文件中还可以存在一个放置链接信息的区块，链接完即删除掉。</p>
+<p>区块合并没有什么硬性规定，把 .rdata 合并到 .text 不会有什么问题。但不应将 .rsrc 、.reloc 或 .pdata 合并到其他区块里。</p>
+</li>
+<li>
+<p>Misc.VirtualSize：指出实际的、被使用的区块大小。如果 VirtualSize 大于 SizeOfRawData ，那么 SizeOfRawData（来自于可执行文件初始化数据的大小）与 VirtualSize 相差的字节用 <code>0</code> 填充。这个字段在 OBJ 文件中设为 <code>0</code> 。</p>
+</li>
+<li>VirtualAddress：该块装载到内存中的 RVA 。这个地址是按照内存页对齐的，它的数值总是 SectionAlignment 的整数倍。在 MS 工具中，第一块的默认 RVA 为 <code>0x1000</code> 。在 OBJ 中，该字段没意义。如果该值为 <code>0x1000</code> ，PE 文件被加载到 <code>0x400000</code> ，那么该 Section 的起始地址为 <code>0x401000</code> 。</li>
+<li>SizeOfRawData：该块在磁盘文件中所占的大小。在可执行文件中，这个值必须是 PE 头部指定的文件对齐大小的倍数。如果是 <code>0</code> ，则说明区块中的数据是未初始化的。该块在磁盘文件中所占的大小，这个数值等于 VirtualSize 字段的值按照 FileAlignment 的值对齐以后的大小。例如，FileAlignment的大小为 <code>0x1000</code> ，如果 VirtualSize 中的块长度为 <code>0x2911</code> ，则 SizeOfRawData 为 <code>0x3000</code> 。</li>
+<li>PointerToRawData：该块在磁盘文件中的偏移。对于可执行文件，这个值必须是 PE 头部指定的文件对齐大小的倍数。</li>
+<li>PointerToRelocations：这部分在 EXE 文件中无意义。在 OBJ 文件中，表示本块重定位信息的偏移量。在 OBJ 文件中如果不是零，则会指向一个 IMAGE_RELOCATION 的数据结构。</li>
+<li>NumberOfRelocations：由 PointerToRelocations 指向的重定位的数目。</li>
+<li>NumberOfLinenumbers：由 NumberOfRelocations 指向的行号的数目，只在 COFF 样式的行号被指定时使用。</li>
+<li>Characteristics：块属性，该字段是一组指出块属性（如代码/数据/可读/可写等）的标志。多个标志值通过 OR 操作形成 Characteristics 的值。这些标志很多都可以通过链接器 <code>/SECTION</code> 选项设置。</li>
+</ol>
+<p>PE 文件常见的区块：</p>
+<table>
+<thead>
+<tr>
+<th>中文名</th>
+<th>命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>执行代码段</td>
+<td>.text（Microsoft）/ CODE（Borland）</td>
+</tr>
+<tr>
+<td>数据段</td>
+<td>.data（全局变量等） / .rdata（只读数据） / .bss（Microsoft，未初始化的数据）/ DATA（Borland）</td>
+</tr>
+<tr>
+<td>资源段</td>
+<td>.rsrc（资源树的结构存放）</td>
+</tr>
+<tr>
+<td>导出表</td>
+<td>.edata</td>
+</tr>
+<tr>
+<td>导入表</td>
+<td>.idata</td>
+</tr>
+<tr>
+<td>调试信息段</td>
+<td>.debug</td>
+</tr>
+</tbody>
+</table>
+<p><em>注 1：.pdata 帮助在运行时进行堆栈遍历。此结构有助于调试和异常处理。</em></p>
+<p><em>注 2：这些区块并不是都是必须的，当然，也可以根据需要定义更多的区块（比如一些加壳程序）。</em></p>
+<h2 id="_2">数据部分——区块（节）</h2>
+<p>略</p>
+<hr />
+<p>参考资料：</p>
+<ol>
+<li>pe文件 https://baike.baidu.com/item/pe%E6%96%87%E4%BB%B6/6488140</li>
+<li>PE Format https://learn.microsoft.com/en-us/windows/win32/debug/pe-format</li>
+<li>PE结构详解（加壳脱壳必备知识）https://blog.csdn.net/a59a59/article/details/103214936</li>
+<li>PE文件结构详解精华 https://blog.csdn.net/weixin_43655282/article/details/104291312</li>
+<li>深入剖析PE文件 https://developer.aliyun.com/article/492435</li>
+<li>PDATA Structures (Windows CE 5.0) https://learn.microsoft.com/en-us/previous-versions/windows/embedded/aa448751(v=msdn.10)</li>
+<li>加密与解密 - 11.2 MS-DOS头 https://blog.csdn.net/qq726232111/article/details/112568763</li>
+<li>加密与解密 - 11.3 PE文件头 https://blog.csdn.net/qq726232111/article/details/112605738</li>
+<li>第11章：PE 文件格式（补充） https://www.cnblogs.com/Rev-omi/p/14118993.html</li>
+<li>PE知识复习之PE的RVA与FOA的转换 https://www.lmlphp.com/user/56/article/item/87/</li>
+</ol>
+<hr />
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../04/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 程序内存布局" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              程序内存布局
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../wp/2022-10_TSCTF-J/" class="md-footer__link md-footer__link--next" aria-label="Next: TSCTF-J WP" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TSCTF-J WP
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
