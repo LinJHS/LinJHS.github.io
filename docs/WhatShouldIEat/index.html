@@ -915,7 +915,7 @@
 <p>今天要吃啥：</p>
 <p id="showRandomNumber">1</p>
 
-<p><button id="generateBtn" style="border: none; border-radius: 10px 10px 10px 10px; background-color: lightblue; box-shadow: 1px 1px 2px 0px gray;">停止生成随机数</button></p>
+<p><button id="generateBtn" style="padding: 10px; border: none; border-radius: 10px 10px 10px 10px; background-color: lightblue; box-shadow: 1px 1px 2px 0px gray;">停止生成随机数</button></p>
 <script>
     let arr = ["教工一楼", "教工二楼", "教工三楼", "教工四楼", "教工五楼", "风味一楼", "风味二楼", "风味三楼", "风味四楼", "风味五楼"];
     let status = 1;
@@ -932,6 +932,7 @@
             {
                 clearInterval(timer);
                 generateBtn.innerHTML = "重新生成随机数";
+                status = 0;
             }
             else
             {
@@ -941,6 +942,7 @@
                         box.innerHTML = arr[num];
                     }, 20);
                 generateBtn.innerHTML = "停止生成随机数";
+                status = 1;
             }
 
         })
