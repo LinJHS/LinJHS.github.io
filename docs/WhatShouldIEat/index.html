@@ -926,7 +926,7 @@
     timer = setInterval(() => {
             let num = Math.round(Math.random() * (arr.length - 1))
             box.innerHTML = arr[num];
-        }, 20);
+        }, 50);
     generateBtn.addEventListener('click', () => {
             if(status == 1)
             {
@@ -940,7 +940,7 @@
                 timer = setInterval(() => {
                 let num = Math.round(Math.random() * (arr.length - 1))
                         box.innerHTML = arr[num];
-                    }, 20);
+                    }, 50);
                 generateBtn.innerHTML = "停止生成随机数";
                 status = 1;
             }
